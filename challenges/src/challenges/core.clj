@@ -1,7 +1,55 @@
-(ns chalenges.core)
+(ns challenges.core)
 
 ;; solution to challenge from https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce
 
+;; https://4clojure.oxal.org/#/problem/195
+(defn paren [n]
+  (if (= n 0)
+    #{""}
+    (if (= n 1)
+      #{"()"}
+      (loop [i (paren (- n 1)) r #{}]
+        (if (empty? i)
+          r
+          (let [x (first i)]
+            (recur (rest i)
+                   (conj r
+                         (str x "()")
+                         (str "(" x ")")
+                         (str "()" x)
+                         ))))))))
+;; https://4clojure.oxal.org/#/problem/44
+(defn rotate [n s]
+  (if (empty? s)
+    s
+    (if (> n 0)
+      (rotate (- n 1) (concat (rest s) [(first s)]))
+      (if (< n 0)
+        (rotate (+ n 1) (conj (drop-last s) (last s)))
+        s))))
+
+;; https://4clojure.oxal.org/#/problem/53
+(defn longuest-consecutive-subseq [seq]
+  (loop [x (first seq)
+         s [x]
+         r (rest seq)
+         ss []]
+    (if (empty? r)
+      (let [s (if (> (count s) (count ss)) s ss)]
+        (if (> (count s) 1)
+          s
+          []))
+      (if (< x (first r))
+        (recur (first r)
+               (concat s [(first r)])
+               (rest r)
+               (if (> (count s) (count ss)) s ss))
+        (recur (first r)
+               [(first r)]
+               (rest r)
+               (if (> (count s) (count ss)) s ss))))))
+
+;; challenge from Freshcode (see usage below)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
     (if (empty? bindings)
@@ -15,7 +63,7 @@
              (group-by ~(second bindings) ~data))))))
 
 #_ (
-usage
+factor-group usage
 
 (def all-patients
  '({:firstname "Adam"
