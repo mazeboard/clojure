@@ -1,8 +1,8 @@
 (ns challenges.core)
-
+(use '[clojure.string :only [index-of]])
 ;; solution to challenge from https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce
 
-;; https://4clojure.oxal.org/#/problem/195
+;; medium Parentheses... Again https://4clojure.oxal.org/#/problem/195
 (defn paren [n]
   (if (= n 0)
     #{""}
@@ -18,7 +18,7 @@
                          (str "(" x ")")
                          (str "()" x)
                          ))))))))
-;; https://4clojure.oxal.org/#/problem/44
+;; medium Rotate Sequence https://4clojure.oxal.org/#/problem/44
 (defn rotate [n s]
   (if (empty? s)
     s
@@ -28,7 +28,7 @@
         (rotate (+ n 1) (conj (drop-last s) (last s)))
         s))))
 
-;; https://4clojure.oxal.org/#/problem/53
+;; hard Longest Increasing Sub-Seq https://4clojure.oxal.org/#/problem/53
 (defn longuest-consecutive-subseq [seq]
   (loop [x (first seq)
          s [x]
@@ -49,6 +49,74 @@
                (rest r)
                (if (> (count s) (count ss)) s ss))))))
 
+;; hard Analyze a Tic-Tac-Toe Board https://4clojure.oxal.org/#/problem/73
+(defn tic-tac-toe [m]
+  (let [u (for [j (range 3)]
+            (let [r (nth m j)]
+              (if (= 0 j)
+                (for [i (range 3)]
+                  (let [s (nth r i)]
+                    (case i
+                      0 (if (or (and (= s (nth r 1)) (= s (nth r 2)))
+                                (and (= s (nth (nth m 1) 0)) (= s (nth (nth m 2) 0)))
+                                (and (= s (nth (nth m 1) 1)) (= s (nth (nth m 2) 2))))
+                          s
+                          :e)
+                      1 (if (and (= s (nth (nth m 1) 1)) (= s (nth (nth m 2) 1)))
+                          s
+                          :e)
+                      2 (if (or (and (= s (nth (nth m 1) 1)) (= s (nth (nth m 2) 0)))
+                                (and (= s (nth (nth m 1) 2)) (= s (nth (nth m 2) 2))))
+                          s
+                          :e))))
+                (let [s (nth r 0)]
+                  (if (and (= s (nth r 1)) (= s (nth r 2)))
+                    s
+                    :e)))))
+        v (remove #(= % :e) (flatten u))]
+    (if (> (count v) 1)
+      :invalid
+      (first v))))
+
+;; hard Word Chains https://4clojure.oxal.org/#/problem/82
+;; solution using permutation (lazily computing permutations, fast in average but in the worst case it generates all permutations)
+(defn word-chains-perm [words]
+  (letfn [(add-word-perm [w p]
+            (if (empty? p)
+              (list (list w))
+              (conj (map #(conj % (first p)) (add-word-perm w (rest p)))
+                    (conj p w))))
+          (get-all-permutations [words]
+            (if (empty? words)
+              (list (list))
+              (let [w (first words)]
+                (mapcat (fn [p] (add-word-perm w p))
+                        (get-all-permutations (rest words))))))
+          (chain? [word1 word2]
+            (let [c1 (count word1) c2 (count word2)]
+              (or (and (= c1 c2) ; substitution
+                       (= 1 (count (remove #(= 0 %) (map #(compare %1 %2) word1 word2)))))
+                  (and (= c1 (+ 1 c2)) ; deletion
+                       (let [r (for [x word2]
+                                 (index-of word1 x))]
+                         (and (not (some #(= % nil) r))
+                              (apply < r))))
+                  (and (= (+ 1 c1) c2) ; insertion
+                       (let [r (for [x word1]
+                                 (index-of word2 x))]
+                         (and (not (some #(= % nil) r))
+                              (apply < r)))))))]
+    (not (nil? (first (filter (fn [p]
+                                (if (empty? (rest p))
+                                  p
+                                  (loop [w1 (first p) r (rest p)]
+                                    (if (empty? r)
+                                      p
+                                      (if (chain? w1 (first r))
+                                        (recur (first r) (rest r)))))))
+                              (get-all-permutations words)))))))
+
+    
 ;; challenge from Freshcode (see usage below)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
