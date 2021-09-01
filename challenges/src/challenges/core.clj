@@ -116,7 +116,22 @@
                                         (recur (first r) (rest r)))))))
                               (get-all-permutations words)))))))
 
-    
+;; hard Number Maze https://4clojure.oxal.org/#/problem/106
+(defn number-maze [start end]
+  (letfn [(nm [s e i]
+            (if (= e (+ 1 s))
+              (+ i 3); *2 +2 /2
+              (if (< s e)
+                (if (<= (* 2 s) e)
+                  (nm (* 2 s) e (+ 1 i))
+                  (nm (+ 2 s) e (+ 1 i)))
+                (if (> s e)
+                  (if (even? s)
+                    (nm (int (/ s 2)) e (+ 1 i)) ; /2
+                    (nm (+ s 1) e (+ 3 i))) ; *2 +2 /2
+                  i))))] 
+    (nm start end 1)))
+
 ;; challenge from Freshcode (see usage below)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
