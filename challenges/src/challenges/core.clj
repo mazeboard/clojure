@@ -81,14 +81,13 @@
 ;; hard Word Chains https://4clojure.oxal.org/#/problem/82
 ;; solution using permutation (lazily computing permutations, fast in average but in the worst case it generates all permutations)
 (defn word-chains-perm [words]
-  (letfn [(add-word-perm [w p]
+  (letfn [(add-word-perm [w p] (println "w:" w "p:" p)
             (if (empty? p)
-              (list (list w))
-              (conj (map #(conj % (first p)) (add-word-perm w (rest p)))
-                    (conj p w))))
+              (cons (cons w nil) nil)
+              (lazy-seq (cons (cons w p) (map #(cons (first p) %) (add-word-perm w (rest p)))))))
           (get-all-permutations [words]
             (if (empty? words)
-              (list (list))
+              (cons nil nil)
               (let [w (first words)]
                 (mapcat (fn [p] (add-word-perm w p))
                         (get-all-permutations (rest words))))))
