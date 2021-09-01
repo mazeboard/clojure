@@ -1,5 +1,6 @@
-(ns challenges.core)
-(use '[clojure.string :only [index-of]])
+(ns challenges.core
+  (:require [clojure.string :as str]))
+
 ;; solution to challenge from https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce
 
 ;; medium Parentheses... Again https://4clojure.oxal.org/#/problem/195
@@ -81,7 +82,7 @@
 ;; hard Word Chains https://4clojure.oxal.org/#/problem/82
 ;; solution using permutation (lazily computing permutations, fast in average but in the worst case it generates all permutations)
 (defn word-chains-perm [words]
-  (letfn [(add-word-perm [w p] (println "w:" w "p:" p)
+  (letfn [(add-word-perm [w p] 
             (if (empty? p)
               (cons (cons w nil) nil)
               (lazy-seq (cons (cons w p) (map #(cons (first p) %) (add-word-perm w (rest p)))))))
@@ -96,13 +97,13 @@
               (or (and (= c1 c2) ; substitution
                        (= 1 (count (remove #(= 0 %) (map #(compare %1 %2) word1 word2)))))
                   (and (= c1 (+ 1 c2)) ; deletion
-                       (let [r (for [x word2]
-                                 (index-of word1 x))]
+                       (let [r (map (fn [x i] (str/index-of word1 x i))
+                                    word2 (range (count word2)))]
                          (and (not (some #(= % nil) r))
                               (apply < r))))
                   (and (= (+ 1 c1) c2) ; insertion
-                       (let [r (for [x word1]
-                                 (index-of word2 x))]
+                       (let [r (map (fn [x i] (str/index-of word2 x i))
+                                    word1 (range (count word1)))]
                          (and (not (some #(= % nil) r))
                               (apply < r)))))))]
     (not (nil? (first (filter (fn [p]
