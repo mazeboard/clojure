@@ -141,6 +141,21 @@
          (reverse-interleave (nthrest lst n) n)
          (range n))))
 
+;; hard Transitive Closure https://4clojure.oxal.org/#/problem/84
+(defn transclosure [rels]
+  (if (empty? rels)
+    #{}
+    (let [[x y] (first rels)]
+      (into #{}
+            (conj (mapcat (fn [[a b]]
+                            (if (= a y)
+                              [[a b] [x b]]
+                              (if (= x b)
+                                [[a b] [a y]]
+                                [[a b]])))
+                          (transclosure (rest rels)))
+                  [x y])))))
+
 ;; challenge from Freshcode (see usage below)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
