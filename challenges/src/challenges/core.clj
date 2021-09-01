@@ -132,6 +132,15 @@
                   i))))] 
     (nm start end 1)))
 
+;; medium Reverse Interleave https://4clojure.oxal.org/#/problem/43
+(defn reverse-interleave [lst n]
+  (if (empty? lst)
+    (for [i (range n)] (list))
+    (map (fn [x i]
+           (conj x (nth lst i)))
+         (reverse-interleave (nthrest lst n) n)
+         (range n))))
+
 ;; challenge from Freshcode (see usage below)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
