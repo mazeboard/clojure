@@ -3,7 +3,7 @@
 
 ;; solution to challenge from https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce
 
-;; medium Parentheses... Again https://4clojure.oxal.org/#/problem/195
+;;[Parentheses... Again](https://4clojure.oxal.org/#/problem/195)
 (defn paren [n]
   (if (= n 0)
     #{""}
@@ -19,7 +19,7 @@
                          (str "(" x ")")
                          (str "()" x)
                          ))))))))
-;; medium Rotate Sequence https://4clojure.oxal.org/#/problem/44
+;; [Rotate Sequence](https://4clojure.oxal.org/#/problem/44)
 (defn rotate [n s]
   (if (empty? s)
     s
@@ -29,7 +29,7 @@
         (rotate (+ n 1) (conj (drop-last s) (last s)))
         s))))
 
-;; hard Longest Increasing Sub-Seq https://4clojure.oxal.org/#/problem/53
+;; [Longest Increasing Sub-Seq](https://4clojure.oxal.org/#/problem/53)
 (defn longuest-consecutive-subseq [seq]
   (loop [x (first seq)
          s [x]
@@ -50,7 +50,7 @@
                (rest r)
                (if (> (count s) (count ss)) s ss))))))
 
-;; hard Analyze a Tic-Tac-Toe Board https://4clojure.oxal.org/#/problem/73
+;; [Analyze a Tic-Tac-Toe Board](https://4clojure.oxal.org/#/problem/73)
 (defn tic-tac-toe [m]
   (let [u (for [j (range 3)]
             (let [r (nth m j)]
@@ -79,7 +79,7 @@
       :invalid
       (first v))))
 
-;; hard Word Chains https://4clojure.oxal.org/#/problem/82
+;; [Word Chains](https://4clojure.oxal.org/#/problem/82)
 ;; solution using permutation (lazily computing permutations, fast in average but in the worst case it generates all permutations)
 (defn word-chains-perm [words]
   (letfn [(add-word-perm [w p] 
@@ -116,7 +116,7 @@
                                         (recur (first r) (rest r)))))))
                               (get-all-permutations words)))))))
 
-;; hard Number Maze https://4clojure.oxal.org/#/problem/106
+;; [Number Maze](https://4clojure.oxal.org/#/problem/106)
 (defn number-maze [start end]
   (letfn [(nm [s e i]
             (if (= e (+ 1 s))
@@ -132,7 +132,7 @@
                   i))))] 
     (nm start end 1)))
 
-;; medium Reverse Interleave https://4clojure.oxal.org/#/problem/43
+;; [Reverse Interleave](https://4clojure.oxal.org/#/problem/43)
 (defn reverse-interleave [lst n]
   (if (empty? lst)
     (for [i (range n)] (list))
@@ -141,7 +141,7 @@
          (reverse-interleave (nthrest lst n) n)
          (range n))))
 
-;; hard Transitive Closure https://4clojure.oxal.org/#/problem/84
+;; [Transitive Closure](https://4clojure.oxal.org/#/problem/84)
 (defn transclosure [rels]
   (if (empty? rels)
     #{}
@@ -156,7 +156,7 @@
                           (transclosure (rest rels)))
                   [x y])))))
 
-;; challenge from Freshcode (see usage below)
+;; [clojure test task: data grouping](https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce)
 (defmacro factor-group [data group-data bindings & body]
   (let [k (gensym)]
     (if (empty? bindings)
