@@ -19,10 +19,11 @@ goog.scope(function() {
       return string;
     }
   };
-  /** @constructor */ writer.JSONMarshaller = function Transit$JSONMarshaller(opts) {
+  writer.JSONMarshaller = function Transit$JSONMarshaller(opts) {
     this.opts = opts || {};
     this.preferStrings = this.opts["preferStrings"] != null ? this.opts["preferStrings"] : true;
     this.objectBuilder = this.opts["objectBuilder"] || null;
+    this.transform = this.opts["transform"] || null;
     this.handlers = new handlers.Handlers;
     var optsHandlers = this.opts["handlers"];
     if (optsHandlers) {
@@ -149,11 +150,6 @@ goog.scope(function() {
       return true;
     }
   };
-  /**
-   * @param em
-   * @param obj
-   * @return {boolean}
-   */
   writer.stringableKeys = function(em, obj) {
     var arr = em.unpack(obj), stringableKeys = true;
     if (arr) {
@@ -189,10 +185,6 @@ goog.scope(function() {
       throw new Error("Cannot walk keys of object type " + handlers.constructor(obj).name);
     }
   };
-  /**
-   * @param x
-   * @return {boolean}
-   */
   writer.isForeignObject = function(x) {
     if (x.constructor["transit$isObject"]) {
       return true;
@@ -200,7 +192,7 @@ goog.scope(function() {
     var ret = x.constructor.toString();
     ret = ret.substr("function ".length);
     ret = ret.substr(0, ret.indexOf("("));
-    isObject = ret == "Object";
+    var isObject = ret == "Object";
     if (typeof Object.defineProperty != "undefined") {
       Object.defineProperty(x.constructor, "transit$isObject", {value:isObject, enumerable:false});
     } else {
@@ -342,6 +334,9 @@ goog.scope(function() {
     }
   };
   writer.marshal = function(em, obj, asMapKey, cache) {
+    if (em.transform !== null) {
+      obj = em.transform(obj);
+    }
     var h = em.handler(obj) || (em.handlerForForeign ? em.handlerForForeign(obj, em.handlers) : null), tag = h ? h.tag(obj) : null, rep = h ? h.rep(obj) : null;
     if (h != null && tag != null) {
       switch(tag) {
@@ -399,7 +394,7 @@ goog.scope(function() {
   writer.marshalTop = function(em, obj, asMapKey, cache) {
     return JSON.stringify(writer.marshal(em, writer.maybeQuoted(em, obj), asMapKey, cache));
   };
-  /** @constructor */ writer.Writer = function Transit$Writer(marshaller, options) {
+  writer.Writer = function Transit$Writer(marshaller, options) {
     this._marshaller = marshaller;
     this.options = options || {};
     if (this.options["cache"] === false) {

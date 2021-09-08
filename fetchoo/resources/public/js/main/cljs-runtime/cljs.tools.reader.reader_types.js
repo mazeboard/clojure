@@ -1,8 +1,4 @@
 goog.provide('cljs.tools.reader.reader_types');
-goog.require('cljs.core');
-goog.require('cljs.tools.reader.impl.utils');
-goog.require('goog.string');
-goog.require('goog.string.StringBuffer');
 
 /**
  * @interface
@@ -644,8 +640,8 @@ return (new cljs.tools.reader.reader_types.StringReader(s,cljs.core.count(s),(0)
  * Creates a PushbackReader from a given string
  */
 cljs.tools.reader.reader_types.string_push_back_reader = (function cljs$tools$reader$reader_types$string_push_back_reader(var_args){
-var G__43452 = arguments.length;
-switch (G__43452) {
+var G__41173 = arguments.length;
+switch (G__41173) {
 case 1:
 return cljs.tools.reader.reader_types.string_push_back_reader.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -677,8 +673,8 @@ return (new cljs.tools.reader.reader_types.PushbackReader((new cljs.tools.reader
  * Creates an IndexingPushbackReader from a given string or PushbackReader
  */
 cljs.tools.reader.reader_types.indexing_push_back_reader = (function cljs$tools$reader$reader_types$indexing_push_back_reader(var_args){
-var G__43469 = arguments.length;
-switch (G__43469) {
+var G__41179 = arguments.length;
+switch (G__41179) {
 case 1:
 return cljs.tools.reader.reader_types.indexing_push_back_reader.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -715,8 +711,8 @@ cljs.tools.reader.reader_types.indexing_push_back_reader.cljs$lang$maxFixedArity
  * Creates a SourceLoggingPushbackReader from a given string or PushbackReader
  */
 cljs.tools.reader.reader_types.source_logging_push_back_reader = (function cljs$tools$reader$reader_types$source_logging_push_back_reader(var_args){
-var G__43484 = arguments.length;
-switch (G__43484) {
+var G__41194 = arguments.length;
+switch (G__41194) {
 case 1:
 return cljs.tools.reader.reader_types.source_logging_push_back_reader.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -759,10 +755,10 @@ while(true){
 if(cljs.tools.reader.impl.utils.newline_QMARK_(c)){
 return cljs.core.str.cljs$core$IFn$_invoke$arity$1(s);
 } else {
-var G__43622 = rdr.cljs$tools$reader$reader_types$Reader$read_char$arity$1(null);
-var G__43623 = s.append(c);
-c = G__43622;
-s = G__43623;
+var G__41405 = rdr.cljs$tools$reader$reader_types$Reader$read_char$arity$1(null);
+var G__41406 = s.append(c);
+c = G__41405;
+s = G__41406;
 continue;
 }
 break;

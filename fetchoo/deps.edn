@@ -1,12 +1,21 @@
-{
- :deps {
-        com.fulcrologic/fulcro {:mvn/version "3.0.0-beta-13"}
-        }
- :aliases {
-           :dev {
-                 :extra-deps {
-                              org.clojure/clojurescript {:mvn/version "1.10.520"}
-                              thheller/shadow-cljs {:mvn/version "2.8.52"}
-                              binaryage/devtools {:mvn/version "0.9.10"}
-                              }}}
-}
+{:deps
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}
+  cljsjs/react                    {:mvn/version "17.0.2-0"}
+  cljsjs/react-dom                {:mvn/version "17.0.2-0"}
+  reagent/reagent {:mvn/version "1.1.0"
+                   :exclusions [cljsjs/react cljsjs/react-dom]}
+  org.apache.spark/spark-core_2.11 {:mvn/version "2.4.3"}
+  org.apache.spark/spark-sql_2.11 {:mvn/version "2.4.3"}
+  org.elasticsearch/elasticsearch {:mvn/version "7.2.0"}
+  org.elasticsearch/elasticsearch-hadoop {:mvn/version "7.2.0"}
+  com.typesafe/config {:mvn/version "1.3.4"}
+  cheshire {:mvn/version "5.10.0"}
+  [org.immutant/immutant {:mvn/version "2.1.10"}]
+  ring {:mvn/version "1.9.4"}
+  }
+ :aliases {:dev {:main-opts ["--main" "cljs.main"
+                             "--watch" "src/fetchoo"
+                             "--compile" "fetchoo.core"
+                             "--repl"]}
+           }
+ {:paths ["src" "classes"]}}

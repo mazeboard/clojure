@@ -1,5 +1,4 @@
 goog.provide('devtools.protocols');
-goog.require('cljs.core');
 
 /**
  * Marker protocol indicating a devtools template.

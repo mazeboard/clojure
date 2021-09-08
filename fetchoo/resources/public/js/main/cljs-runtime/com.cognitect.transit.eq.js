@@ -2,8 +2,8 @@ goog.provide("com.cognitect.transit.eq");
 goog.require("com.cognitect.transit.util");
 goog.scope(function() {
   var eq = com.cognitect.transit.eq, util = com.cognitect.transit.util;
-  /** @const @type {string} */ eq.hashCodeProperty = "transit$hashCode$";
-  /** @type {number} */ eq.hashCodeCounter = 1;
+  eq.hashCodeProperty = "transit$hashCode$";
+  eq.hashCodeCounter = 1;
   eq.equals = function(x, y) {
     if (x == null) {
       return y == null;
@@ -67,7 +67,7 @@ goog.scope(function() {
   };
   eq.stringCodeCache = {};
   eq.stringCodeCacheSize = 0;
-  /** @const @type {number} */ eq.STR_CACHE_MAX = 256;
+  eq.STR_CACHE_MAX = 256;
   eq.hashString = function(str) {
     var cached = eq.stringCodeCache[str];
     if (cached != null) {

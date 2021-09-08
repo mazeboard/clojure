@@ -1,0 +1,14 @@
+{:deps
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}
+  cljsjs/react                    {:mvn/version "17.0.2-0"}
+  cljsjs/react-dom                {:mvn/version "17.0.2-0"}
+  reagent/reagent {:mvn/version "1.1.0" :exclusions [cljsjs/react cljsjs/react-dom]}
+  }
+ :aliases {:dev {:main-opts ["--main" "cljs.main"
+                             "--watch" "src/hello_world"
+                             "--compile" "hello-world.core"
+                             "--repl"]}
+           :socket {:jms-opts ["-Dclojure.server.browser={:port,4444,:accept,cljs.server.browser/repl}"]
+                    :main-opts ["--main" "cljs.main"
+                                "--watch" "src"
+                                "--compile" "app.client"]}}}

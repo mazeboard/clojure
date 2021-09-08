@@ -1,5 +1,6 @@
 (ns challenges.core
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as str]
+            [clojure.math.numeric-tower :as math]))
 
 ;; solution to challenge from https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce
 
@@ -168,6 +169,19 @@
                              ~(rest (rest bindings))
                              (let [~(first bindings) ~k] ~@body)))
              (group-by ~(second bindings) ~data))))))
+
+;; improvement
+#_(defmacro factor-group [data group-data [binding-sym binding-key & rest-bindings :as bindings] & body]
+  (let [k (gensym)]
+    (if (empty? bindings)
+      `(list (let [~group-data ~data] ~@body))
+      `(flatten
+        (map (fn [[~k data#]]
+               (factor-group data#
+                             ~group-data
+                             ~rest-bindings
+                             (let [~binding-sym ~k] ~@body)))
+             (group-by ~binding-key ~data))))))
 
 #_ (
 factor-group usage

@@ -1,8 +1,4 @@
 goog.provide('devtools.async');
-goog.require('cljs.core');
-goog.require('goog.async.nextTick');
-goog.require('goog.labs.userAgent.browser');
-goog.require('devtools.context');
 devtools.async.available_QMARK_ = (function devtools$async$available_QMARK_(){
 return (typeof Promise !== 'undefined');
 });
@@ -27,12 +23,12 @@ throw e;
 }),(0));
 });
 devtools.async.promise_based_set_immediate = (function devtools$async$promise_based_set_immediate(callback){
-var o__39391__auto___40959 = (function (){var o__39391__auto__ = (function (){var o__39391__auto__ = Promise;
-return (o__39391__auto__["resolve"]).call(o__39391__auto__);
+var o__39595__auto___40761 = (function (){var o__39595__auto__ = (function (){var o__39595__auto__ = Promise;
+return (o__39595__auto__["resolve"]).call(o__39595__auto__);
 })();
-return (o__39391__auto__["then"]).call(o__39391__auto__,callback);
+return (o__39595__auto__["then"]).call(o__39595__auto__,callback);
 })();
-(o__39391__auto___40959["catch"]).call(o__39391__auto___40959,devtools.async.rethrow_outside_promise);
+(o__39595__auto___40761["catch"]).call(o__39595__auto___40761,devtools.async.rethrow_outside_promise);
 
 return null;
 });
@@ -53,21 +49,21 @@ return null;
 } else {
 devtools.async._STAR_installed_STAR_ = true;
 
-var G__40943_40960 = Error;
-var target__39404__auto___40961 = G__40943_40960;
-if(cljs.core.truth_(target__39404__auto___40961)){
+var G__40759_40765 = Error;
+var target__39611__auto___40766 = G__40759_40765;
+if(cljs.core.truth_(target__39611__auto___40766)){
 } else {
-throw (new Error(["Assert failed: ",["unable to locate object path ",null," in ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__40943_40960)].join(''),"\n","target__39404__auto__"].join('')));
+throw (new Error(["Assert failed: ",["unable to locate object path ",null," in ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__40759_40765)].join(''),"\n","target__39611__auto__"].join('')));
 }
 
-(target__39404__auto___40961["stackTraceLimit"] = Infinity);
+(target__39611__auto___40766["stackTraceLimit"] = Infinity);
 
 
 devtools.async.install_async_set_immediate_BANG_();
 
-if((devtools.async.needed_QMARK_.cljs$core$IFn$_invoke$arity$0 ? devtools.async.needed_QMARK_.cljs$core$IFn$_invoke$arity$0() : devtools.async.needed_QMARK_.call(null))){
+if(devtools.async.needed_QMARK_.call(null)){
 } else {
-(devtools.context.get_console.cljs$core$IFn$_invoke$arity$0 ? devtools.context.get_console.cljs$core$IFn$_invoke$arity$0() : devtools.context.get_console.call(null)).info((devtools.async.get_not_needed_message.cljs$core$IFn$_invoke$arity$0 ? devtools.async.get_not_needed_message.cljs$core$IFn$_invoke$arity$0() : devtools.async.get_not_needed_message.call(null)));
+devtools.context.get_console.call(null).info(devtools.async.get_not_needed_message.call(null));
 }
 
 return true;

@@ -1,0 +1,468 @@
+2021-09-07 10:51:37,060 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 10:51:37,316 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 10:51:37,322 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 10:51:37,335 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 10:51:37,418 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 10:51:37,429 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 10:51:37,464 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 10:51:37,464 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 10:51:37,475 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 10:51:37,475 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 10:51:37,475 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 10:51:37,475 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 10:51:37,475 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 10:57:20,626 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 10:57:20,627 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 10:57:20,630 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 10:57:20,630 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 10:57:20,631 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 10:57:20,631 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 10:57:20,631 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 10:57:30,434 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 10:57:30,678 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 10:57:30,683 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 10:57:30,695 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 10:57:30,771 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 10:57:30,783 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 10:57:30,816 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 10:57:30,817 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 10:57:30,827 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 10:57:30,827 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 10:57:30,828 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 10:57:30,828 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 10:57:30,828 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 11:01:53,526 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 11:01:53,526 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 11:01:53,527 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 11:01:53,528 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 11:01:53,528 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 11:01:53,528 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 11:01:53,528 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 11:02:03,725 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 11:02:03,965 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 11:02:03,969 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 11:02:03,978 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 11:02:04,059 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 11:02:04,070 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 11:02:04,099 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 11:02:04,100 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 11:02:04,110 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 11:02:04,111 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 11:02:04,111 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 11:02:04,111 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 11:02:04,111 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 11:04:31,427 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 11:04:31,427 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 11:04:31,429 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 11:04:31,430 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 11:04:31,430 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 11:04:31,430 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 11:04:31,430 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 11:04:42,060 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 11:04:42,294 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 11:04:42,298 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 11:04:42,305 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 11:04:42,384 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 11:04:42,396 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 11:04:42,428 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 11:04:42,429 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 11:04:42,440 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 11:04:42,440 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 11:04:42,440 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 11:04:42,440 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 11:04:42,440 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 11:07:48,843 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 11:07:48,844 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 11:07:48,845 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 11:07:48,846 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 11:07:48,846 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 11:07:48,846 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 11:07:48,846 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 17:40:16,008 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 17:41:01,858 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 17:41:02,106 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 17:41:02,111 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 17:41:02,125 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 17:41:02,209 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 17:41:02,220 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 17:41:02,252 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 17:41:02,252 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 17:41:02,261 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 17:41:02,261 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 17:41:02,261 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 17:41:02,261 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 17:41:02,261 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 17:41:05,006 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 17:41:05,006 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 17:41:05,010 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 17:41:05,011 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 17:41:05,011 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 17:41:05,011 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 17:41:05,011 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 17:45:58,991 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 17:45:59,208 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 17:45:59,213 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 17:45:59,220 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 17:45:59,306 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 17:45:59,317 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 17:45:59,351 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 17:45:59,351 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 17:45:59,360 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 17:45:59,361 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 17:45:59,361 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 17:45:59,361 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 17:45:59,361 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 18:55:46,538 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 18:55:46,539 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 18:55:46,540 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 18:55:46,540 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 18:55:46,541 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 18:55:46,541 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 18:55:46,541 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 18:55:56,888 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 18:55:57,126 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 18:55:57,133 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 18:55:57,149 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 18:55:57,218 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 18:55:57,230 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 18:55:57,264 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 18:55:57,264 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 18:55:57,273 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 18:55:57,274 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 18:55:57,274 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 18:55:57,274 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 18:55:57,274 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:01:03,894 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:01:03,894 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:01:03,896 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:01:03,896 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:01:03,896 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:01:03,897 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:01:03,897 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:01:14,357 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:01:14,597 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:01:14,601 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:01:14,612 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:01:14,694 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:01:14,706 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:01:14,736 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:01:14,737 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:01:14,747 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:01:14,747 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:01:14,747 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:01:14,747 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:01:14,747 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:02:44,310 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:02:44,311 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:02:44,312 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:02:44,313 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:02:44,313 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:02:44,313 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:02:44,313 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:04:08,136 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:04:08,396 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:04:08,400 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:04:08,412 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:04:08,492 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:04:08,503 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:04:08,533 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:04:08,534 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:04:08,545 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:04:08,545 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:04:08,546 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:04:08,546 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:04:08,546 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:04:43,627 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:04:43,628 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:04:43,630 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:04:43,630 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:04:43,631 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:04:43,631 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:04:43,631 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:04:53,402 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:04:53,635 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:04:53,638 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:04:53,650 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:04:53,726 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:04:53,738 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:04:53,766 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:04:53,766 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:04:53,777 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:04:53,777 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:04:53,777 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:04:53,777 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:04:53,777 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:06:06,595 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:06:06,596 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:06:06,597 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:06:06,597 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:06:06,597 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:06:06,597 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:06:06,598 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:06:15,858 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:06:16,092 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:06:16,096 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:06:16,108 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:06:16,182 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:06:16,194 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:06:16,223 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:06:16,224 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:06:16,233 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:06:16,234 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:06:16,234 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:06:16,234 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:06:16,234 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:08:17,344 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:08:17,344 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:08:17,346 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:08:17,346 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:08:17,346 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:08:17,347 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:08:17,347 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:08:26,866 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:08:27,103 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:08:27,108 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:08:27,120 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:08:27,202 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:08:27,214 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:08:27,244 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:08:27,244 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:08:27,256 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:08:27,256 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:08:27,256 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:08:27,256 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:08:27,256 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:08:46,215 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:08:46,216 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:08:46,217 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:08:46,218 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:08:46,218 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:08:46,218 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:08:46,218 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:08:56,189 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:08:56,423 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:08:56,433 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:08:56,443 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:08:56,517 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:08:56,530 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:08:56,563 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:08:56,564 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:08:56,577 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:08:56,577 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:08:56,577 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:08:56,577 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:08:56,578 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:09:12,729 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:09:12,729 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:09:12,731 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:09:12,732 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:09:12,732 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:09:12,732 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:09:12,733 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:11:51,919 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:11:52,165 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:11:52,169 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:11:52,182 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:11:52,255 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:11:52,265 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:11:52,293 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:11:52,293 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:11:52,305 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:11:52,305 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:11:52,305 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:11:52,306 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:11:52,306 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:12:16,999 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:12:16,999 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:12:17,001 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:12:17,001 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:12:17,001 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:12:17,001 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:12:17,001 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:12:26,588 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:12:26,829 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:12:26,833 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:12:26,850 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:12:26,925 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:12:26,937 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:12:26,967 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:12:26,968 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:12:26,978 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:12:26,978 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:12:26,978 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:12:26,978 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:12:26,978 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:12:34,841 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:12:34,842 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:12:34,844 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:12:34,844 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:12:34,844 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:12:34,845 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:12:34,845 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:13:09,638 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:13:09,875 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:13:09,879 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:13:09,890 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:13:09,969 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:13:09,982 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:13:10,012 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:13:10,012 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:13:10,024 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:13:10,024 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:13:10,024 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:13:10,024 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:13:10,025 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:13:30,171 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:13:30,172 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:13:30,173 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:13:30,174 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:13:30,174 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:13:30,174 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:13:30,174 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:13:40,877 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:13:41,121 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:13:41,125 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:13:41,137 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:13:41,220 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:13:41,232 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:13:41,264 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:13:41,264 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:13:41,276 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:13:41,276 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:13:41,276 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:13:41,276 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:13:41,276 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:14:11,478 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:14:11,479 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:14:11,480 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:14:11,480 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:14:11,481 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:14:11,481 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:14:11,481 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:14:29,192 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:14:29,417 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:14:29,421 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:14:29,433 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:14:29,515 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:14:29,529 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:14:29,559 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:14:29,559 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:14:29,570 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:14:29,570 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:14:29,570 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:14:29,571 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:14:29,571 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:16:09,144 [XNIO-1 task-1] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:16:09,145 [XNIO-1 task-1] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:20:32,207 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:20:32,207 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:20:32,209 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:20:32,209 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:20:32,209 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:20:32,210 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:20:32,210 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:21:13,675 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:21:13,910 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:21:13,914 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:21:13,921 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:21:13,998 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:21:14,010 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:21:14,036 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:21:14,036 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:21:14,046 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:21:14,046 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:21:14,046 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:21:14,046 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:21:14,046 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:22:23,315 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:22:23,315 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:22:23,317 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:22:23,317 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:22:23,317 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:22:23,317 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:22:23,318 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:22:34,464 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:22:34,697 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:22:34,702 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:22:34,709 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:22:34,794 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:22:34,807 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:22:34,843 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:22:34,843 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:22:34,857 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:22:34,857 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:22:34,857 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:22:34,857 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:22:34,858 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 19:23:37,890 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 19:23:37,891 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 19:23:37,893 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 19:23:37,893 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 19:23:37,894 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 19:23:37,894 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 19:23:37,894 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-07 19:23:48,649 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-07 19:23:48,879 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-07 19:23:48,883 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-07 19:23:48,894 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-07 19:23:48,976 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-07 19:23:48,989 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-07 19:23:49,019 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-07 19:23:49,019 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-07 19:23:49,030 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-07 19:23:49,030 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-07 19:23:49,030 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-07 19:23:49,030 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-07 19:23:49,030 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-07 20:55:38,660 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-07 20:55:38,662 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-07 20:55:38,664 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-07 20:55:38,665 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-07 20:55:38,665 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-07 20:55:38,665 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-07 20:55:38,666 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 

@@ -9,7 +9,7 @@ goog.scope(function() {
   } else {
     types.ITERATOR = "@@iterator";
   }
-  /** @constructor */ types.TaggedValue = function Transit$TaggedValue(tag, rep) {
+  types.TaggedValue = function Transit$TaggedValue(tag, rep) {
     this.tag = tag;
     this.rep = rep;
     this.hashCode = -1;
@@ -99,7 +99,7 @@ goog.scope(function() {
   types.charValue = function(s) {
     return s;
   };
-  /** @constructor */ types.Keyword = function Transit$Keyword(name) {
+  types.Keyword = function Transit$Keyword(name) {
     this._name = name;
     this.hashCode = -1;
   };
@@ -141,7 +141,7 @@ goog.scope(function() {
   types.isKeyword = function(x) {
     return x instanceof types.Keyword;
   };
-  /** @constructor */ types.Symbol = function Transit$Symbol(name) {
+  types.Symbol = function Transit$Symbol(name) {
     this._name = name;
     this.hashCode = -1;
   };
@@ -184,7 +184,8 @@ goog.scope(function() {
     return x instanceof types.Symbol;
   };
   types.hexFor = function(aLong, sidx, eidx) {
-    var ret = "", eidx = eidx || sidx + 1;
+    var ret = "";
+    eidx = eidx || sidx + 1;
     for (var i = sidx, shift = (7 - i) * 8, mask = Long.fromInt(255).shiftLeft(shift); i < eidx; i++, shift -= 8, mask = mask.shiftRightUnsigned(8)) {
       var s = aLong.and(mask).shiftRightUnsigned(shift).toString(16);
       if (s.length == 1) {
@@ -194,7 +195,7 @@ goog.scope(function() {
     }
     return ret;
   };
-  /** @constructor */ types.UUID = function Transit$UUID(high, low) {
+  types.UUID = function Transit$UUID(high, low) {
     this.high = high;
     this.low = low;
     this.hashCode = -1;
@@ -228,7 +229,8 @@ goog.scope(function() {
     return this.hashCode;
   };
   types.UUIDfromString = function uuidFromString(s) {
-    var s = s.replace(/-/g, ""), hi64 = null, lo64 = null, hi32 = 0, lo32 = 0, off = 24, i = 0;
+    s = s.replace(/-/g, "");
+    var hi64 = null, lo64 = null, hi32 = 0, lo32 = 0, off = 24, i = 0;
     for (hi32 = 0, i = 0, off = 24; i < 8; i += 2, off -= 8) {
       hi32 |= parseInt(s.substring(i, i + 2), 16) << off;
     }
@@ -268,14 +270,9 @@ goog.scope(function() {
   Date.prototype.com$cognitect$transit$hashCode = function() {
     return this.valueOf();
   };
-  /**
-   * @param {string} str
-   * @param {*=} decoder
-   * @return {(com.cognitect.transit.types.TaggedValue|Uint8Array)}
-   */
   types.binary = function(str, decoder) {
-    if ((!decoder || decoder.preferBuffers !== false) && typeof Buffer != "undefined") {
-      return new Buffer(str, "base64");
+    if ((!decoder || decoder.preferBuffers !== false) && typeof goog.global.Buffer != "undefined") {
+      return new goog.global.Buffer(str, "base64");
     } else {
       if (typeof Uint8Array != "undefined") {
         return util.Base64ToUint8(str);
@@ -285,7 +282,7 @@ goog.scope(function() {
     }
   };
   types.isBinary = function(x) {
-    if (typeof Buffer != "undefined" && x instanceof Buffer) {
+    if (typeof goog.global.Buffer != "undefined" && x instanceof goog.global.Buffer) {
       return true;
     } else {
       if (typeof Uint8Array != "undefined" && x instanceof Uint8Array) {
@@ -301,10 +298,10 @@ goog.scope(function() {
   types.isURI = function(x) {
     return x instanceof types.TaggedValue && x.tag === "r";
   };
-  /** @const @type {number} */ types.KEYS = 0;
-  /** @const @type {number} */ types.VALUES = 1;
-  /** @const @type {number} */ types.ENTRIES = 2;
-  /** @constructor */ types.TransitArrayMapIterator = function Transit$ArrayMapIterator(entries, type) {
+  types.KEYS = 0;
+  types.VALUES = 1;
+  types.ENTRIES = 2;
+  types.TransitArrayMapIterator = function Transit$ArrayMapIterator(entries, type) {
     this.entries = entries;
     this.type = type || types.KEYS;
     this.idx = 0;
@@ -332,12 +329,12 @@ goog.scope(function() {
   types.TransitArrayMapIterator.prototype[types.ITERATOR] = function() {
     return this;
   };
-  /** @constructor */ types.TransitMapIterator = function Transit$MapIterator(map, type) {
+  types.TransitMapIterator = function Transit$MapIterator(map, type) {
     this.map = map;
     this.type = type || types.KEYS;
     this.keys = this.map.getKeys();
     this.idx = 0;
-    /** @type {?Object} */ this.bucket = null;
+    this.bucket = null;
     this.bucketIdx = 0;
   };
   types.TransitMapIterator.prototype.next = function() {
@@ -414,9 +411,9 @@ goog.scope(function() {
       }
     }
   };
-  /** @const @type {number} */ types.SMALL_ARRAY_MAP_THRESHOLD = 8;
-  /** @const @type {number} */ types.ARRAY_MAP_THRESHOLD = 32;
-  /** @const @type {number} */ types.ARRAY_MAP_ACCESS_THRESHOLD = 32;
+  types.SMALL_ARRAY_MAP_THRESHOLD = 8;
+  types.ARRAY_MAP_THRESHOLD = 32;
+  types.ARRAY_MAP_ACCESS_THRESHOLD = 32;
   types.print = function(x) {
     if (x == null) {
       return "null";
@@ -453,10 +450,6 @@ goog.scope(function() {
     });
     return str + "}";
   };
-  /**
-   * @constructor
-   * @param {Array} entries
-   */
   types.TransitArrayMap = function Transit$ArrayMap(entries) {
     this._entries = entries;
     this.backingMap = null;
@@ -533,9 +526,6 @@ goog.scope(function() {
     }
   };
   types.TransitArrayMap.prototype["values"] = types.TransitArrayMap.prototype.values;
-  /**
-   * @param {function(*,*)} f
-   */
   types.TransitArrayMap.prototype.forEach = function(f) {
     if (this.backingMap) {
       this.backingMap.forEach(f);
@@ -546,11 +536,6 @@ goog.scope(function() {
     }
   };
   types.TransitArrayMap.prototype["forEach"] = types.TransitArrayMap.prototype.forEach;
-  /**
-   * @param {*} k
-   * @param {*=} notFound
-   * @return {*}
-   */
   types.TransitArrayMap.prototype.get = function(k, notFound) {
     if (this.backingMap) {
       return this.backingMap.get(k);
@@ -610,7 +595,7 @@ goog.scope(function() {
   types.TransitArrayMap.prototype["delete"] = function(k) {
     this.hashCode = -1;
     if (this.backingMap) {
-      var ret = this.backingMap["delete"](k);
+      var ret = this.backingMap.delete(k);
       this.size = this.backingMap.size;
       return ret;
     } else {
@@ -652,12 +637,6 @@ goog.scope(function() {
       return types.mapEquals(this, other);
     }
   };
-  /**
-   * @constructor
-   * @param {(null|Array)=} keys
-   * @param {(null|Object)=} map
-   * @param {(null|number)=} size
-   */
   types.TransitMap = function Transit$Map(keys, map, size) {
     this.map = map || {};
     this._keys = keys || [];
@@ -806,12 +785,6 @@ goog.scope(function() {
   types.TransitMap.prototype.com$cognitect$transit$equals = function(other) {
     return types.mapEquals(this, other);
   };
-  /**
-   * @param {Array=} arr
-   * @param {boolean=} checkDups
-   * @param {boolean=} hashMap
-   * @return {com.cognitect.transit.MapLike}
-   */
   types.map = function(arr, checkDups, hashMap) {
     arr = arr || [];
     checkDups = checkDups === false ? checkDups : true;
@@ -869,10 +842,6 @@ goog.scope(function() {
   types.isMap = function(x) {
     return x instanceof types.TransitArrayMap || x instanceof types.TransitMap;
   };
-  /**
-   * @constructor
-   * @param {com.cognitect.transit.MapLike} map
-   */
   types.TransitSet = function Transit$Set(map) {
     this.map = map;
     this.size = map.size;
@@ -894,7 +863,7 @@ goog.scope(function() {
   };
   types.TransitSet.prototype["clear"] = types.TransitSet.prototype.clear;
   types.TransitSet.prototype["delete"] = function(value) {
-    var ret = this.map["delete"](value);
+    var ret = this.map.delete(value);
     this.size = this.map.size;
     return ret;
   };
@@ -902,10 +871,6 @@ goog.scope(function() {
     return this.map.entries();
   };
   types.TransitSet.prototype["entries"] = types.TransitSet.prototype.entries;
-  /**
-   * @param {function(*,*)} iterator
-   * @param {Object=} thisArg
-   */
   types.TransitSet.prototype.forEach = function(iterator, thisArg) {
     var self = this;
     this.map.forEach(function(v, k, m) {
@@ -952,10 +917,6 @@ goog.scope(function() {
   types.TransitSet.prototype.com$cognitect$transit$hashCode = function(other) {
     return eq.hashCode(this.map);
   };
-  /**
-   * @param {Array=} arr
-   * @return {com.cognitect.transit.SetLike}
-   */
   types.set = function(arr) {
     arr = arr || [];
     var map = {}, keys = [], size = 0;

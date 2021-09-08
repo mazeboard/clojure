@@ -672,3 +672,29 @@ shadow-cljs - nREPL server started on port 9000
   [shadow.cljs.devtools.server.util$server_thread$fn__14782 invoke "util.clj" 257]
   [clojure.lang.AFn run "AFn.java" 22]
   [java.lang.Thread run "Thread.java" 831]]}]
+shadow-cljs - server version: 2.11.17 running at http://localhost:9630
+shadow-cljs - server version: 2.11.17 running at http://localhost:9630
+[1m------ WARNING #1 -  -----------------------------------------------------------[0m
+ Resource: com/cognitect/transit.js:649:8
+ variable module is undeclared
+--------------------------------------------------------------------------------
+shadow-cljs - server version: 2.11.17 running at http://localhost:9630
+[1m------ WARNING #1 -  -----------------------------------------------------------[0m
+ Resource: com/cognitect/transit.js:649:8
+ variable module is undeclared
+--------------------------------------------------------------------------------
+[1m------ WARNING #1 -  -----------------------------------------------------------[0m
+ Resource: com/cognitect/transit.js:649:8
+ variable module is undeclared
+--------------------------------------------------------------------------------
+shadow-cljs - server version: 2.11.17 running at http://localhost:9630
+[1m------ WARNING #1 -  -----------------------------------------------------------[0m
+ Resource: com/cognitect/transit.js:649:8
+ variable module is undeclared
+--------------------------------------------------------------------------------
+[1m------ WARNING #1 -  -----------------------------------------------------------[0m
+ Resource: com/cognitect/transit.js:649:8
+ variable module is undeclared
+--------------------------------------------------------------------------------
+shadow-cljs - server version: 2.11.23 running at http://localhost:9630
+shadow-cljs - server version: 2.11.23 running at http://localhost:9630

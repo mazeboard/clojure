@@ -1,6 +1,4 @@
 goog.provide('com.fulcrologic.fulcro.algorithms.lookup');
-goog.require('cljs.core');
-goog.require('taoensso.timbre');
 /**
  * Get the current value of a particular Fulcro plugin algorithm.  These are set by default and can be overridden
  *   when you create your fulcro app.
@@ -9,9 +7,8 @@ goog.require('taoensso.timbre');
  *   `k` - the algorithm to obtain. This can be a plain keyword or a symbol of the algorithm desired.
  * 
  *   Supported algorithms that can be obtained/overridden in Fulcro (check the source of app/fulcro-app if you suspect this is out
- *   of date):
+ *   of date, which is likely is):
  * 
- *   - `:tx!` - Internal implementation of transaction submission. Default `app/default-tx!`
  *   - `:global-eql-transform` - A `(fn [tx] tx')` that is applied to all outgoing requests (when using default `tx!`).
  *   Defaults to stripping things like `:ui/*` and form state config joins.
  *   - `:remote-error?` - A `(fn [result] boolean)` that defines what a remote error is.
@@ -29,11 +26,11 @@ goog.require('taoensso.timbre');
  *   Returns nil if the algorithm is currently undefined.
  *   
  */
-com.fulcrologic.fulcro.algorithms.lookup.app_algorithm = (function com$fulcrologic$fulcro$algorithms$lookup$app_algorithm(p__53161,k){
-var map__53162 = p__53161;
-var map__53162__$1 = (((((!((map__53162 == null))))?(((((map__53162.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__53162.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__53162):map__53162);
-var app__$1 = map__53162__$1;
-var algorithms = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__53162__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","algorithms","com.fulcrologic.fulcro.application/algorithms",-397334538));
+com.fulcrologic.fulcro.algorithms.lookup.app_algorithm = (function com$fulcrologic$fulcro$algorithms$lookup$app_algorithm(p__54923,k){
+var map__54924 = p__54923;
+var map__54924__$1 = (((((!((map__54924 == null))))?(((((map__54924.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__54924.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__54924):map__54924);
+var app__$1 = map__54924__$1;
+var algorithms = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54924__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","algorithms","com.fulcrologic.fulcro.application/algorithms",-397334538));
 var temp__5753__auto__ = ((((typeof k === 'string') || ((k instanceof cljs.core.Keyword)) || ((k instanceof cljs.core.Symbol))))?cljs.core.keyword.cljs$core$IFn$_invoke$arity$2("com.fulcrologic.fulcro.algorithm",cljs.core.name(k)):null);
 if(cljs.core.truth_(temp__5753__auto__)){
 var nm = temp__5753__auto__;

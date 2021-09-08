@@ -5,7 +5,7 @@ goog.require("com.cognitect.transit.caching");
 goog.require("com.cognitect.transit.types");
 goog.scope(function() {
   var decoder = com.cognitect.transit.impl.decoder, util = com.cognitect.transit.util, d = com.cognitect.transit.delimiters, caching = com.cognitect.transit.caching, types = com.cognitect.transit.types;
-  /** @constructor */ decoder.Tag = function Transit$Tag(s) {
+  decoder.Tag = function Transit$Tag(s) {
     this.str = s;
   };
   decoder.tag = function(s) {
@@ -29,7 +29,7 @@ goog.scope(function() {
     }
     return false;
   };
-  /** @constructor */ decoder.Decoder = function Transit$Decoder(options) {
+  decoder.Decoder = function Transit$Decoder(options) {
     this.options = options || {};
     this.handlers = {};
     for (var h in this.defaults.handlers) {
@@ -90,13 +90,6 @@ goog.scope(function() {
   }}, defaultHandler:function(c, val) {
     return types.taggedValue(c, val);
   }, preferStrings:true, preferBuffers:true};
-  /**
-   * @param {*} node
-   * @param {*} cache
-   * @param {boolean=} asMapKey
-   * @param {boolean=} tagValue
-   * @return {*}
-   */
   decoder.Decoder.prototype.decode = function(node, cache, asMapKey, tagValue) {
     if (node == null) {
       return null;

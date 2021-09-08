@@ -1,5 +1,6 @@
 goog.provide("goog.net.XhrIo");
 goog.provide("goog.net.XhrIo.ResponseType");
+goog.forwardDeclare("goog.Uri");
 goog.require("goog.Timer");
 goog.require("goog.array");
 goog.require("goog.asserts");
@@ -17,58 +18,42 @@ goog.require("goog.structs");
 goog.require("goog.structs.Map");
 goog.require("goog.uri.utils");
 goog.require("goog.userAgent");
-goog.forwardDeclare("goog.Uri");
 goog.scope(function() {
-  /**
-   * @constructor
-   * @extends {goog.events.EventTarget}
-   * @param {goog.net.XmlHttpFactory=} opt_xmlHttpFactory
-   */
   goog.net.XhrIo = function(opt_xmlHttpFactory) {
     XhrIo.base(this, "constructor");
-    /** @type {!goog.structs.Map} */ this.headers = new goog.structs.Map;
-    /** @private @type {goog.net.XmlHttpFactory} */ this.xmlHttpFactory_ = opt_xmlHttpFactory || null;
-    /** @private @type {boolean} */ this.active_ = false;
-    /** @private @type {?goog.net.XhrLike.OrNative} */ this.xhr_ = null;
-    /** @private @type {?Object} */ this.xhrOptions_ = null;
-    /** @private @type {(string|goog.Uri)} */ this.lastUri_ = "";
-    /** @private @type {string} */ this.lastMethod_ = "";
-    /** @private @type {!goog.net.ErrorCode} */ this.lastErrorCode_ = goog.net.ErrorCode.NO_ERROR;
-    /** @private @type {(Error|string)} */ this.lastError_ = "";
-    /** @private @type {boolean} */ this.errorDispatched_ = false;
-    /** @private @type {boolean} */ this.inSend_ = false;
-    /** @private @type {boolean} */ this.inOpen_ = false;
-    /** @private @type {boolean} */ this.inAbort_ = false;
-    /** @private @type {number} */ this.timeoutInterval_ = 0;
-    /** @private @type {?number} */ this.timeoutId_ = null;
-    /** @private @type {goog.net.XhrIo.ResponseType} */ this.responseType_ = ResponseType.DEFAULT;
-    /** @private @type {boolean} */ this.withCredentials_ = false;
-    /** @private @type {boolean} */ this.progressEventsEnabled_ = false;
-    /** @private @type {boolean} */ this.useXhr2Timeout_ = false;
+    this.headers = new goog.structs.Map;
+    this.xmlHttpFactory_ = opt_xmlHttpFactory || null;
+    this.active_ = false;
+    this.xhr_ = null;
+    this.xhrOptions_ = null;
+    this.lastUri_ = "";
+    this.lastMethod_ = "";
+    this.lastErrorCode_ = goog.net.ErrorCode.NO_ERROR;
+    this.lastError_ = "";
+    this.errorDispatched_ = false;
+    this.inSend_ = false;
+    this.inOpen_ = false;
+    this.inAbort_ = false;
+    this.timeoutInterval_ = 0;
+    this.timeoutId_ = null;
+    this.responseType_ = ResponseType.DEFAULT;
+    this.withCredentials_ = false;
+    this.progressEventsEnabled_ = false;
+    this.useXhr2Timeout_ = false;
   };
   goog.inherits(goog.net.XhrIo, goog.events.EventTarget);
   var XhrIo = goog.net.XhrIo;
-  /** @enum {string} */ goog.net.XhrIo.ResponseType = {DEFAULT:"", TEXT:"text", DOCUMENT:"document", BLOB:"blob", ARRAY_BUFFER:"arraybuffer"};
+  goog.net.XhrIo.ResponseType = {DEFAULT:"", TEXT:"text", DOCUMENT:"document", BLOB:"blob", ARRAY_BUFFER:"arraybuffer"};
   var ResponseType = goog.net.XhrIo.ResponseType;
-  /** @private @const @type {?goog.log.Logger} */ goog.net.XhrIo.prototype.logger_ = goog.log.getLogger("goog.net.XhrIo");
-  /** @type {string} */ goog.net.XhrIo.CONTENT_TYPE_HEADER = "Content-Type";
-  /** @type {string} */ goog.net.XhrIo.CONTENT_TRANSFER_ENCODING = "Content-Transfer-Encoding";
-  /** @type {!RegExp} */ goog.net.XhrIo.HTTP_SCHEME_PATTERN = /^https?$/i;
-  /** @type {!Array<string>} */ goog.net.XhrIo.METHODS_WITH_FORM_DATA = ["POST", "PUT"];
-  /** @type {string} */ goog.net.XhrIo.FORM_CONTENT_TYPE = "application/x-www-form-urlencoded;charset\x3dutf-8";
-  /** @private @const @type {string} */ goog.net.XhrIo.XHR2_TIMEOUT_ = "timeout";
-  /** @private @const @type {string} */ goog.net.XhrIo.XHR2_ON_TIMEOUT_ = "ontimeout";
-  /** @private @type {!Array<!goog.net.XhrIo>} */ goog.net.XhrIo.sendInstances_ = [];
-  /**
-   * @param {(string|goog.Uri)} url
-   * @param {?function(this:goog.net.XhrIo,?)=} opt_callback
-   * @param {string=} opt_method
-   * @param {(ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string)=} opt_content
-   * @param {(Object|goog.structs.Map)=} opt_headers
-   * @param {number=} opt_timeoutInterval
-   * @param {boolean=} opt_withCredentials
-   * @return {!goog.net.XhrIo}
-   */
+  goog.net.XhrIo.prototype.logger_ = goog.log.getLogger("goog.net.XhrIo");
+  goog.net.XhrIo.CONTENT_TYPE_HEADER = "Content-Type";
+  goog.net.XhrIo.CONTENT_TRANSFER_ENCODING = "Content-Transfer-Encoding";
+  goog.net.XhrIo.HTTP_SCHEME_PATTERN = /^https?$/i;
+  goog.net.XhrIo.METHODS_WITH_FORM_DATA = ["POST", "PUT"];
+  goog.net.XhrIo.FORM_CONTENT_TYPE = "application/x-www-form-urlencoded;charset\x3dutf-8";
+  goog.net.XhrIo.XHR2_TIMEOUT_ = "timeout";
+  goog.net.XhrIo.XHR2_ON_TIMEOUT_ = "ontimeout";
+  goog.net.XhrIo.sendInstances_ = [];
   goog.net.XhrIo.send = function(url, opt_callback, opt_method, opt_content, opt_headers, opt_timeoutInterval, opt_withCredentials) {
     var x = new goog.net.XhrIo;
     goog.net.XhrIo.sendInstances_.push(x);
@@ -91,71 +76,37 @@ goog.scope(function() {
       instances.pop().dispose();
     }
   };
-  /**
-   * @param {goog.debug.ErrorHandler} errorHandler
-   */
   goog.net.XhrIo.protectEntryPoints = function(errorHandler) {
     goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_ = errorHandler.protectEntryPoint(goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_);
   };
-  /** @private */ goog.net.XhrIo.prototype.cleanupSend_ = function() {
+  goog.net.XhrIo.prototype.cleanupSend_ = function() {
     this.dispose();
     goog.array.remove(goog.net.XhrIo.sendInstances_, this);
   };
-  /**
-   * @return {number}
-   */
   goog.net.XhrIo.prototype.getTimeoutInterval = function() {
     return this.timeoutInterval_;
   };
-  /**
-   * @param {number} ms
-   */
   goog.net.XhrIo.prototype.setTimeoutInterval = function(ms) {
     this.timeoutInterval_ = Math.max(0, ms);
   };
-  /**
-   * @param {goog.net.XhrIo.ResponseType} type
-   */
   goog.net.XhrIo.prototype.setResponseType = function(type) {
     this.responseType_ = type;
   };
-  /**
-   * @return {goog.net.XhrIo.ResponseType}
-   */
   goog.net.XhrIo.prototype.getResponseType = function() {
     return this.responseType_;
   };
-  /**
-   * @param {boolean} withCredentials
-   */
   goog.net.XhrIo.prototype.setWithCredentials = function(withCredentials) {
     this.withCredentials_ = withCredentials;
   };
-  /**
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.getWithCredentials = function() {
     return this.withCredentials_;
   };
-  /**
-   * @param {boolean} enabled
-   */
   goog.net.XhrIo.prototype.setProgressEventsEnabled = function(enabled) {
     this.progressEventsEnabled_ = enabled;
   };
-  /**
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.getProgressEventsEnabled = function() {
     return this.progressEventsEnabled_;
   };
-  /**
-   * @param {(string|goog.Uri)} url
-   * @param {string=} opt_method
-   * @param {(ArrayBuffer|ArrayBufferView|Blob|Document|FormData|string)=} opt_content
-   * @param {(Object|goog.structs.Map)=} opt_headers
-   * @suppress {deprecated}
-   */
   goog.net.XhrIo.prototype.send = function(url, opt_method, opt_content, opt_headers) {
     if (this.xhr_) {
       throw new Error("[goog.net.XhrIo] Object is active with another request\x3d" + this.lastUri_ + "; newUri\x3d" + url);
@@ -225,35 +176,21 @@ goog.scope(function() {
       this.inSend_ = true;
       this.xhr_.send(content);
       this.inSend_ = false;
-    } catch (err$4) {
-      goog.log.fine(this.logger_, this.formatMsg_("Send error: " + err$4.message));
-      this.error_(goog.net.ErrorCode.EXCEPTION, err$4);
+    } catch (err$5) {
+      goog.log.fine(this.logger_, this.formatMsg_("Send error: " + err$5.message));
+      this.error_(goog.net.ErrorCode.EXCEPTION, err$5);
     }
   };
-  /**
-   * @private
-   * @param {!goog.net.XhrLike.OrNative} xhr
-   * @return {boolean}
-   */
   goog.net.XhrIo.shouldUseXhr2Timeout_ = function(xhr) {
-    return goog.userAgent.IE && goog.userAgent.isVersionOrHigher(9) && goog.isNumber(xhr[goog.net.XhrIo.XHR2_TIMEOUT_]) && goog.isDef(xhr[goog.net.XhrIo.XHR2_ON_TIMEOUT_]);
+    return goog.userAgent.IE && goog.userAgent.isVersionOrHigher(9) && typeof xhr[goog.net.XhrIo.XHR2_TIMEOUT_] === "number" && xhr[goog.net.XhrIo.XHR2_ON_TIMEOUT_] !== undefined;
   };
-  /**
-   * @private
-   * @param {string} header
-   * @return {boolean}
-   */
   goog.net.XhrIo.isContentTypeHeader_ = function(header) {
     return goog.string.caseInsensitiveEquals(goog.net.XhrIo.CONTENT_TYPE_HEADER, header);
   };
-  /**
-   * @protected
-   * @return {!goog.net.XhrLike.OrNative}
-   */
   goog.net.XhrIo.prototype.createXhr = function() {
     return this.xmlHttpFactory_ ? this.xmlHttpFactory_.createInstance() : goog.net.XmlHttp();
   };
-  /** @private */ goog.net.XhrIo.prototype.timeout_ = function() {
+  goog.net.XhrIo.prototype.timeout_ = function() {
     if (typeof goog == "undefined") {
     } else {
       if (this.xhr_) {
@@ -265,11 +202,6 @@ goog.scope(function() {
       }
     }
   };
-  /**
-   * @private
-   * @param {goog.net.ErrorCode} errorCode
-   * @param {Error} err
-   */
   goog.net.XhrIo.prototype.error_ = function(errorCode, err) {
     this.active_ = false;
     if (this.xhr_) {
@@ -282,16 +214,13 @@ goog.scope(function() {
     this.dispatchErrors_();
     this.cleanUpXhr_();
   };
-  /** @private */ goog.net.XhrIo.prototype.dispatchErrors_ = function() {
+  goog.net.XhrIo.prototype.dispatchErrors_ = function() {
     if (!this.errorDispatched_) {
       this.errorDispatched_ = true;
       this.dispatchEvent(goog.net.EventType.COMPLETE);
       this.dispatchEvent(goog.net.EventType.ERROR);
     }
   };
-  /**
-   * @param {goog.net.ErrorCode=} opt_failureCode
-   */
   goog.net.XhrIo.prototype.abort = function(opt_failureCode) {
     if (this.xhr_ && this.active_) {
       goog.log.fine(this.logger_, this.formatMsg_("Aborting"));
@@ -305,7 +234,7 @@ goog.scope(function() {
       this.cleanUpXhr_();
     }
   };
-  /** @protected @override */ goog.net.XhrIo.prototype.disposeInternal = function() {
+  goog.net.XhrIo.prototype.disposeInternal = function() {
     if (this.xhr_) {
       if (this.active_) {
         this.active_ = false;
@@ -317,7 +246,7 @@ goog.scope(function() {
     }
     XhrIo.base(this, "disposeInternal");
   };
-  /** @private */ goog.net.XhrIo.prototype.onReadyStateChange_ = function() {
+  goog.net.XhrIo.prototype.onReadyStateChange_ = function() {
     if (this.isDisposed()) {
       return;
     }
@@ -327,10 +256,10 @@ goog.scope(function() {
       this.onReadyStateChangeHelper_();
     }
   };
-  /** @private */ goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_ = function() {
+  goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_ = function() {
     this.onReadyStateChangeHelper_();
   };
-  /** @private */ goog.net.XhrIo.prototype.onReadyStateChangeHelper_ = function() {
+  goog.net.XhrIo.prototype.onReadyStateChangeHelper_ = function() {
     if (!this.active_) {
       return;
     }
@@ -363,29 +292,14 @@ goog.scope(function() {
       }
     }
   };
-  /**
-   * @private
-   * @param {!ProgressEvent} e
-   * @param {boolean=} opt_isDownload
-   */
   goog.net.XhrIo.prototype.onProgressHandler_ = function(e, opt_isDownload) {
     goog.asserts.assert(e.type === goog.net.EventType.PROGRESS, "goog.net.EventType.PROGRESS is of the same type as raw XHR progress.");
     this.dispatchEvent(goog.net.XhrIo.buildProgressEvent_(e, goog.net.EventType.PROGRESS));
     this.dispatchEvent(goog.net.XhrIo.buildProgressEvent_(e, opt_isDownload ? goog.net.EventType.DOWNLOAD_PROGRESS : goog.net.EventType.UPLOAD_PROGRESS));
   };
-  /**
-   * @private
-   * @param {!ProgressEvent} e
-   * @param {!goog.net.EventType} eventType
-   * @return {!ProgressEvent}
-   */
   goog.net.XhrIo.buildProgressEvent_ = function(e, eventType) {
-    return (/** @type {!ProgressEvent} */ ({type:eventType, lengthComputable:e.lengthComputable, loaded:e.loaded, total:e.total}));
+    return {type:eventType, lengthComputable:e.lengthComputable, loaded:e.loaded, total:e.total};
   };
-  /**
-   * @private
-   * @param {boolean=} opt_fromDispose
-   */
   goog.net.XhrIo.prototype.cleanUpXhr_ = function(opt_fromDispose) {
     if (this.xhr_) {
       this.cleanUpTimeoutTimer_();
@@ -403,7 +317,7 @@ goog.scope(function() {
       }
     }
   };
-  /** @private */ goog.net.XhrIo.prototype.cleanUpTimeoutTimer_ = function() {
+  goog.net.XhrIo.prototype.cleanUpTimeoutTimer_ = function() {
     if (this.xhr_ && this.useXhr2Timeout_) {
       this.xhr_[goog.net.XhrIo.XHR2_ON_TIMEOUT_] = null;
     }
@@ -412,42 +326,23 @@ goog.scope(function() {
       this.timeoutId_ = null;
     }
   };
-  /**
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.isActive = function() {
     return !!this.xhr_;
   };
-  /**
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.isComplete = function() {
     return this.getReadyState() == goog.net.XmlHttp.ReadyState.COMPLETE;
   };
-  /**
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.isSuccess = function() {
     var status = this.getStatus();
     return goog.net.HttpStatus.isSuccess(status) || status === 0 && !this.isLastUriEffectiveSchemeHttp_();
   };
-  /**
-   * @private
-   * @return {boolean}
-   */
   goog.net.XhrIo.prototype.isLastUriEffectiveSchemeHttp_ = function() {
     var scheme = goog.uri.utils.getEffectiveScheme(String(this.lastUri_));
     return goog.net.XhrIo.HTTP_SCHEME_PATTERN.test(scheme);
   };
-  /**
-   * @return {goog.net.XmlHttp.ReadyState}
-   */
   goog.net.XhrIo.prototype.getReadyState = function() {
-    return this.xhr_ ? /** @type {goog.net.XmlHttp.ReadyState} */ (this.xhr_.readyState) : goog.net.XmlHttp.ReadyState.UNINITIALIZED;
+    return this.xhr_ ? this.xhr_.readyState : goog.net.XmlHttp.ReadyState.UNINITIALIZED;
   };
-  /**
-   * @return {number}
-   */
   goog.net.XhrIo.prototype.getStatus = function() {
     try {
       return this.getReadyState() > goog.net.XmlHttp.ReadyState.LOADED ? this.xhr_.status : -1;
@@ -455,9 +350,6 @@ goog.scope(function() {
       return -1;
     }
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getStatusText = function() {
     try {
       return this.getReadyState() > goog.net.XmlHttp.ReadyState.LOADED ? this.xhr_.statusText : "";
@@ -466,15 +358,9 @@ goog.scope(function() {
       return "";
     }
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getLastUri = function() {
     return String(this.lastUri_);
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getResponseText = function() {
     try {
       return this.xhr_ ? this.xhr_.responseText : "";
@@ -483,9 +369,6 @@ goog.scope(function() {
       return "";
     }
   };
-  /**
-   * @return {Object}
-   */
   goog.net.XhrIo.prototype.getResponseBody = function() {
     try {
       if (this.xhr_ && "responseBody" in this.xhr_) {
@@ -496,9 +379,6 @@ goog.scope(function() {
     }
     return null;
   };
-  /**
-   * @return {Document}
-   */
   goog.net.XhrIo.prototype.getResponseXml = function() {
     try {
       return this.xhr_ ? this.xhr_.responseXML : null;
@@ -507,10 +387,6 @@ goog.scope(function() {
       return null;
     }
   };
-  /**
-   * @param {string=} opt_xssiPrefix
-   * @return {(Object|undefined)}
-   */
   goog.net.XhrIo.prototype.getResponseJson = function(opt_xssiPrefix) {
     if (!this.xhr_) {
       return undefined;
@@ -521,9 +397,6 @@ goog.scope(function() {
     }
     return goog.json.hybrid.parse(responseText);
   };
-  /**
-   * @return {*}
-   */
   goog.net.XhrIo.prototype.getResponse = function() {
     try {
       if (!this.xhr_) {
@@ -548,26 +421,16 @@ goog.scope(function() {
       return null;
     }
   };
-  /**
-   * @param {string} key
-   * @return {(string|undefined)}
-   */
   goog.net.XhrIo.prototype.getResponseHeader = function(key) {
     if (!this.xhr_ || !this.isComplete()) {
       return undefined;
     }
     var value = this.xhr_.getResponseHeader(key);
-    return goog.isNull(value) ? undefined : value;
+    return value === null ? undefined : value;
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getAllResponseHeaders = function() {
     return this.xhr_ && this.isComplete() ? this.xhr_.getAllResponseHeaders() || "" : "";
   };
-  /**
-   * @return {!Object<string,string>}
-   */
   goog.net.XhrIo.prototype.getResponseHeaders = function() {
     var headersObject = {};
     var headersArray = this.getAllResponseHeaders().split("\r\n");
@@ -578,7 +441,7 @@ goog.scope(function() {
       var keyValue = goog.string.splitLimit(headersArray[i], ":", 1);
       var key = keyValue[0];
       var value = keyValue[1];
-      if (!goog.isString(value)) {
+      if (typeof value !== "string") {
         continue;
       }
       value = value.trim();
@@ -590,43 +453,22 @@ goog.scope(function() {
       return values.join(", ");
     });
   };
-  /**
-   * @param {string} key
-   * @return {?string}
-   */
   goog.net.XhrIo.prototype.getStreamingResponseHeader = function(key) {
     return this.xhr_ ? this.xhr_.getResponseHeader(key) : null;
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getAllStreamingResponseHeaders = function() {
     return this.xhr_ ? this.xhr_.getAllResponseHeaders() : "";
   };
-  /**
-   * @return {!goog.net.ErrorCode}
-   */
   goog.net.XhrIo.prototype.getLastErrorCode = function() {
     return this.lastErrorCode_;
   };
-  /**
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.getLastError = function() {
-    return goog.isString(this.lastError_) ? this.lastError_ : String(this.lastError_);
+    return typeof this.lastError_ === "string" ? this.lastError_ : String(this.lastError_);
   };
-  /**
-   * @private
-   * @param {string} msg
-   * @return {string}
-   */
   goog.net.XhrIo.prototype.formatMsg_ = function(msg) {
     return msg + " [" + this.lastMethod_ + " " + this.lastUri_ + " " + this.getStatus() + "]";
   };
-  goog.debug.entryPointRegistry.register(/**
-   * @param {function(!Function):!Function} transformer
-   */
-  function(transformer) {
+  goog.debug.entryPointRegistry.register(function(transformer) {
     goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_ = transformer(goog.net.XhrIo.prototype.onReadyStateChangeEntryPoint_);
   });
 });

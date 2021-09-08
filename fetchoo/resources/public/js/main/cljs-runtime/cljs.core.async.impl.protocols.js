@@ -1,5 +1,4 @@
 goog.provide('cljs.core.async.impl.protocols');
-goog.require('cljs.core');
 cljs.core.async.impl.protocols.MAX_QUEUE_SIZE = (1024);
 
 /**
@@ -269,8 +268,8 @@ throw cljs.core.missing_protocol("Buffer.close-buf!",b);
 });
 
 cljs.core.async.impl.protocols.add_BANG_ = (function cljs$core$async$impl$protocols$add_BANG_(var_args){
-var G__45264 = arguments.length;
-switch (G__45264) {
+var G__47096 = arguments.length;
+switch (G__47096) {
 case 1:
 return cljs.core.async.impl.protocols.add_BANG_.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 

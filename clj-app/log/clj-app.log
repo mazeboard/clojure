@@ -1,0 +1,102 @@
+2021-09-08 12:17:10,143 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-08 12:17:10,406 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-08 12:17:10,412 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-08 12:17:10,431 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-08 12:17:10,522 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-08 12:17:10,534 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-08 12:17:10,574 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-08 12:17:10,575 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-08 12:17:10,593 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-08 12:17:10,593 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-08 12:17:10,594 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-08 12:17:10,594 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-08 12:17:10,594 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-08 13:14:54,054 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-08 13:14:54,054 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-08 13:14:54,056 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-08 13:14:54,057 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-08 13:14:54,058 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-08 13:14:54,058 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-08 13:14:54,058 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-08 14:45:35,749 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-08 14:45:36,016 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-08 14:45:36,027 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-08 14:45:36,048 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-08 14:45:36,132 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-08 14:45:36,146 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-08 14:45:36,187 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-08 14:45:36,189 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-08 14:45:36,199 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-08 14:45:36,201 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-08 14:45:36,201 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-08 14:45:36,201 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-08 14:45:36,201 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-08 14:45:38,355 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-08 14:45:38,355 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-08 14:45:38,359 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-08 14:45:38,359 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-08 14:45:38,359 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-08 14:45:38,360 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-08 14:45:38,360 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-08 14:56:32,167 [main] INFO  clj-app.env - 
+-=[clj-app started successfully]=- 
+2021-09-08 14:56:32,424 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-08 14:56:32,430 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-08 14:56:32,499 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-08 14:56:32,538 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-08 14:56:32,539 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-08 14:56:32,539 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-08 14:56:32,539 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-08 14:56:32,539 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-08 14:56:32,539 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-08 14:56:37,448 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-08 14:56:37,452 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-08 14:56:37,453 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-08 14:56:37,453 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-08 14:56:37,453 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-08 14:56:37,453 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-08 15:41:34,718 [main] ERROR clj-app.core - {:what :uncaught-exception, :exception #error {
+ :cause Unable to resolve var: clj-app.core/repl-server in this context
+ :via
+ [{:type clojure.lang.Compiler$CompilerException
+   :message Syntax error compiling var at (user.clj:19:3).
+   :data {:clojure.error/phase :compile-syntax-check, :clojure.error/line 19, :clojure.error/column 3, :clojure.error/source user.clj, :clojure.error/symbol var}
+   :at [clojure.lang.Compiler analyzeSeq Compiler.java 7119]}
+  {:type java.lang.RuntimeException
+   :message Unable to resolve var: clj-app.core/repl-server in this context
+   :at [clojure.lang.Util runtimeException Util.java 221]}]
+ :trace
+ [[clojure.lang.Util runtimeException Util.java 221]
+  [clojure.lang.Compiler$TheVarExpr$Parser parse Compiler.java 720]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3892]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$BodyExpr$Parser parse Compiler.java 6124]
+  [clojure.lang.Compiler$FnMethod parse Compiler.java 5471]
+  [clojure.lang.Compiler$FnExpr parse Compiler.java 4033]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7109]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$DefExpr$Parser parse Compiler.java 596]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler eval Compiler.java 7185]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 368]
+  [clojure.lang.RT maybeLoadResourceScript RT.java 364]
+  [clojure.lang.RT doInit RT.java 486]
+  [clojure.lang.RT init RT.java 467]
+  [clojure.main main main.java 38]]}, :where Uncaught exception onmain} 

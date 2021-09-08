@@ -1,0 +1,464 @@
+2021-09-06 18:24:17,896 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 18:24:18,137 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 18:24:18,145 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 18:24:18,153 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 18:24:18,237 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 18:24:18,250 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 18:24:18,280 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 18:24:18,281 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 18:24:18,291 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 18:24:18,292 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 18:24:18,292 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 18:24:18,292 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 18:24:18,292 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 18:25:54,875 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 18:25:54,876 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 18:25:54,878 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 18:25:54,878 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 18:25:54,878 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 18:25:54,878 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 18:25:54,879 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 20:26:31,740 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 20:26:31,976 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 20:26:31,981 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 20:26:31,994 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 20:26:32,078 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 20:26:32,090 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 20:26:32,127 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 20:26:32,127 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 20:26:32,137 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 20:26:32,137 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 20:26:32,137 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 20:26:32,137 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 20:26:32,137 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 20:29:17,228 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 20:29:17,228 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 20:29:17,232 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 20:29:17,233 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 20:29:17,233 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 20:29:17,233 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 20:29:17,234 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 20:29:27,406 [main] ERROR clj-app.core - {:what :uncaught-exception, :exception #error {
+ :cause class clojure.lang.Symbol cannot be cast to class clojure.lang.IPersistentVector (clojure.lang.Symbol and clojure.lang.IPersistentVector are in unnamed module of loader 'app')
+ :via
+ [{:type clojure.lang.Compiler$CompilerException
+   :message Syntax error compiling fn* at (clj_app/core.clj:51:21).
+   :data {:clojure.error/phase :compile-syntax-check, :clojure.error/line 51, :clojure.error/column 21, :clojure.error/source clj_app/core.clj, :clojure.error/symbol fn*}
+   :at [clojure.lang.Compiler analyzeSeq Compiler.java 7119]}
+  {:type java.lang.ClassCastException
+   :message class clojure.lang.Symbol cannot be cast to class clojure.lang.IPersistentVector (clojure.lang.Symbol and clojure.lang.IPersistentVector are in unnamed module of loader 'app')
+   :at [clojure.lang.Compiler$FnMethod parse Compiler.java 5342]}]
+ :trace
+ [[clojure.lang.Compiler$FnMethod parse Compiler.java 5342]
+  [clojure.lang.Compiler$FnExpr parse Compiler.java 4033]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7109]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3885]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3892]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$LetExpr$Parser parse Compiler.java 6388]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$BodyExpr$Parser parse Compiler.java 6122]
+  [clojure.lang.Compiler$FnMethod parse Compiler.java 5471]
+  [clojure.lang.Compiler$FnExpr parse Compiler.java 4033]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7109]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$DefExpr$Parser parse Compiler.java 596]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler eval Compiler.java 7185]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 372]
+  [clojure.lang.RT load RT.java 459]
+  [clojure.lang.RT load RT.java 424]
+  [clojure.core$load$fn__6856 invoke core.clj 6115]
+  [clojure.core$load invokeStatic core.clj 6114]
+  [clojure.core$load doInvoke core.clj 6098]
+  [clojure.lang.RestFn invoke RestFn.java 408]
+  [clojure.core$load_one invokeStatic core.clj 5897]
+  [clojure.core$load_one invoke core.clj 5892]
+  [clojure.core$load_lib$fn__6796 invoke core.clj 5937]
+  [clojure.core$load_lib invokeStatic core.clj 5936]
+  [clojure.core$load_lib doInvoke core.clj 5917]
+  [clojure.lang.RestFn applyTo RestFn.java 142]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$load_libs invokeStatic core.clj 5974]
+  [clojure.core$load_libs doInvoke core.clj 5958]
+  [clojure.lang.RestFn applyTo RestFn.java 137]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$require invokeStatic core.clj 5996]
+  [clojure.core$require doInvoke core.clj 5996]
+  [clojure.lang.RestFn invoke RestFn.java 512]
+  [user$eval140$loading__6737__auto____141 invoke user.clj 1]
+  [user$eval140 invokeStatic user.clj 1]
+  [user$eval140 invoke user.clj 1]
+  [clojure.lang.Compiler eval Compiler.java 7181]
+  [clojure.lang.Compiler eval Compiler.java 7170]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 368]
+  [clojure.lang.RT maybeLoadResourceScript RT.java 364]
+  [clojure.lang.RT doInit RT.java 486]
+  [clojure.lang.RT init RT.java 467]
+  [clojure.main main main.java 38]]}, :where Uncaught exception onmain} 
+2021-09-06 20:31:24,509 [main] ERROR clj-app.core - {:what :uncaught-exception, :exception #error {
+ :cause Call to clojure.core/fn did not conform to spec.
+ :data {:clojure.spec.alpha/problems ({:path [:fn-tail :arity-1 :params], :pred clojure.core/vector?, :val (parse-opts args cli-options), :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0]} {:path [:fn-tail :arity-n :params], :pred clojure.core/vector?, :val parse-opts, :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0 0]}), :clojure.spec.alpha/spec #object[clojure.spec.alpha$regex_spec_impl$reify__2510 0x45ef4dcb clojure.spec.alpha$regex_spec_impl$reify__2510@45ef4dcb], :clojure.spec.alpha/value ((parse-opts args cli-options) [& x] (do (println ---- x) (apply mount/start-with-args x))), :clojure.spec.alpha/args ((parse-opts args cli-options) [& x] (do (println ---- x) (apply mount/start-with-args x)))}
+ :via
+ [{:type clojure.lang.Compiler$CompilerException
+   :message Syntax error macroexpanding clojure.core/fn at (clj_app/core.clj:53:25).
+   :data {:clojure.error/phase :macro-syntax-check, :clojure.error/line 53, :clojure.error/column 25, :clojure.error/source clj_app/core.clj, :clojure.error/symbol clojure.core/fn}
+   :at [clojure.lang.Compiler checkSpecs Compiler.java 6976]}
+  {:type clojure.lang.ExceptionInfo
+   :message Call to clojure.core/fn did not conform to spec.
+   :data {:clojure.spec.alpha/problems ({:path [:fn-tail :arity-1 :params], :pred clojure.core/vector?, :val (parse-opts args cli-options), :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0]} {:path [:fn-tail :arity-n :params], :pred clojure.core/vector?, :val parse-opts, :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0 0]}), :clojure.spec.alpha/spec #object[clojure.spec.alpha$regex_spec_impl$reify__2510 0x45ef4dcb clojure.spec.alpha$regex_spec_impl$reify__2510@45ef4dcb], :clojure.spec.alpha/value ((parse-opts args cli-options) [& x] (do (println ---- x) (apply mount/start-with-args x))), :clojure.spec.alpha/args ((parse-opts args cli-options) [& x] (do (println ---- x) (apply mount/start-with-args x)))}
+   :at [clojure.spec.alpha$macroexpand_check invokeStatic alpha.clj 712]}]
+ :trace
+ [[clojure.spec.alpha$macroexpand_check invokeStatic alpha.clj 712]
+  [clojure.spec.alpha$macroexpand_check invoke alpha.clj 704]
+  [clojure.lang.AFn applyToHelper AFn.java 156]
+  [clojure.lang.AFn applyTo AFn.java 144]
+  [clojure.lang.Var applyTo Var.java 705]
+  [clojure.lang.Compiler checkSpecs Compiler.java 6974]
+  [clojure.lang.Compiler macroexpand1 Compiler.java 6992]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7097]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3885]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3892]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$LetExpr$Parser parse Compiler.java 6388]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$BodyExpr$Parser parse Compiler.java 6122]
+  [clojure.lang.Compiler$FnMethod parse Compiler.java 5471]
+  [clojure.lang.Compiler$FnExpr parse Compiler.java 4033]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7109]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$DefExpr$Parser parse Compiler.java 596]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler eval Compiler.java 7185]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 372]
+  [clojure.lang.RT load RT.java 459]
+  [clojure.lang.RT load RT.java 424]
+  [clojure.core$load$fn__6856 invoke core.clj 6115]
+  [clojure.core$load invokeStatic core.clj 6114]
+  [clojure.core$load doInvoke core.clj 6098]
+  [clojure.lang.RestFn invoke RestFn.java 408]
+  [clojure.core$load_one invokeStatic core.clj 5897]
+  [clojure.core$load_one invoke core.clj 5892]
+  [clojure.core$load_lib$fn__6796 invoke core.clj 5937]
+  [clojure.core$load_lib invokeStatic core.clj 5936]
+  [clojure.core$load_lib doInvoke core.clj 5917]
+  [clojure.lang.RestFn applyTo RestFn.java 142]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$load_libs invokeStatic core.clj 5974]
+  [clojure.core$load_libs doInvoke core.clj 5958]
+  [clojure.lang.RestFn applyTo RestFn.java 137]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$require invokeStatic core.clj 5996]
+  [clojure.core$require doInvoke core.clj 5996]
+  [clojure.lang.RestFn invoke RestFn.java 512]
+  [user$eval140$loading__6737__auto____141 invoke user.clj 1]
+  [user$eval140 invokeStatic user.clj 1]
+  [user$eval140 invoke user.clj 1]
+  [clojure.lang.Compiler eval Compiler.java 7181]
+  [clojure.lang.Compiler eval Compiler.java 7170]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 368]
+  [clojure.lang.RT maybeLoadResourceScript RT.java 364]
+  [clojure.lang.RT doInit RT.java 486]
+  [clojure.lang.RT init RT.java 467]
+  [clojure.main main main.java 38]]}, :where Uncaught exception onmain} 
+2021-09-06 20:35:23,513 [main] ERROR clj-app.core - {:what :uncaught-exception, :exception #error {
+ :cause Call to clojure.core/fn did not conform to spec.
+ :data {:clojure.spec.alpha/problems ({:path [:fn-tail :arity-1 :params], :pred clojure.core/vector?, :val (parse-opts args cli-options), :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0]} {:path [:fn-tail :arity-n :params], :pred clojure.core/vector?, :val parse-opts, :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0 0]}), :clojure.spec.alpha/spec #object[clojure.spec.alpha$regex_spec_impl$reify__2510 0x5dea8bf2 clojure.spec.alpha$regex_spec_impl$reify__2510@5dea8bf2], :clojure.spec.alpha/value ((parse-opts args cli-options) [y & x] (do (println ---- y y x x) (apply (mount/start-with-args y) x))), :clojure.spec.alpha/args ((parse-opts args cli-options) [y & x] (do (println ---- y y x x) (apply (mount/start-with-args y) x)))}
+ :via
+ [{:type clojure.lang.Compiler$CompilerException
+   :message Syntax error macroexpanding clojure.core/fn at (clj_app/core.clj:53:25).
+   :data {:clojure.error/phase :macro-syntax-check, :clojure.error/line 53, :clojure.error/column 25, :clojure.error/source clj_app/core.clj, :clojure.error/symbol clojure.core/fn}
+   :at [clojure.lang.Compiler checkSpecs Compiler.java 6976]}
+  {:type clojure.lang.ExceptionInfo
+   :message Call to clojure.core/fn did not conform to spec.
+   :data {:clojure.spec.alpha/problems ({:path [:fn-tail :arity-1 :params], :pred clojure.core/vector?, :val (parse-opts args cli-options), :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0]} {:path [:fn-tail :arity-n :params], :pred clojure.core/vector?, :val parse-opts, :via [:clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/params+body :clojure.core.specs.alpha/param-list :clojure.core.specs.alpha/param-list], :in [0 0]}), :clojure.spec.alpha/spec #object[clojure.spec.alpha$regex_spec_impl$reify__2510 0x5dea8bf2 clojure.spec.alpha$regex_spec_impl$reify__2510@5dea8bf2], :clojure.spec.alpha/value ((parse-opts args cli-options) [y & x] (do (println ---- y y x x) (apply (mount/start-with-args y) x))), :clojure.spec.alpha/args ((parse-opts args cli-options) [y & x] (do (println ---- y y x x) (apply (mount/start-with-args y) x)))}
+   :at [clojure.spec.alpha$macroexpand_check invokeStatic alpha.clj 712]}]
+ :trace
+ [[clojure.spec.alpha$macroexpand_check invokeStatic alpha.clj 712]
+  [clojure.spec.alpha$macroexpand_check invoke alpha.clj 704]
+  [clojure.lang.AFn applyToHelper AFn.java 156]
+  [clojure.lang.AFn applyTo AFn.java 144]
+  [clojure.lang.Var applyTo Var.java 705]
+  [clojure.lang.Compiler checkSpecs Compiler.java 6974]
+  [clojure.lang.Compiler macroexpand1 Compiler.java 6992]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7097]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3885]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$InvokeExpr parse Compiler.java 3892]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7113]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$LetExpr$Parser parse Compiler.java 6388]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler$BodyExpr$Parser parse Compiler.java 6122]
+  [clojure.lang.Compiler$FnMethod parse Compiler.java 5471]
+  [clojure.lang.Compiler$FnExpr parse Compiler.java 4033]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7109]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7099]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler access$300 Compiler.java 38]
+  [clojure.lang.Compiler$DefExpr$Parser parse Compiler.java 596]
+  [clojure.lang.Compiler analyzeSeq Compiler.java 7111]
+  [clojure.lang.Compiler analyze Compiler.java 6793]
+  [clojure.lang.Compiler analyze Compiler.java 6749]
+  [clojure.lang.Compiler eval Compiler.java 7185]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 372]
+  [clojure.lang.RT load RT.java 459]
+  [clojure.lang.RT load RT.java 424]
+  [clojure.core$load$fn__6856 invoke core.clj 6115]
+  [clojure.core$load invokeStatic core.clj 6114]
+  [clojure.core$load doInvoke core.clj 6098]
+  [clojure.lang.RestFn invoke RestFn.java 408]
+  [clojure.core$load_one invokeStatic core.clj 5897]
+  [clojure.core$load_one invoke core.clj 5892]
+  [clojure.core$load_lib$fn__6796 invoke core.clj 5937]
+  [clojure.core$load_lib invokeStatic core.clj 5936]
+  [clojure.core$load_lib doInvoke core.clj 5917]
+  [clojure.lang.RestFn applyTo RestFn.java 142]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$load_libs invokeStatic core.clj 5974]
+  [clojure.core$load_libs doInvoke core.clj 5958]
+  [clojure.lang.RestFn applyTo RestFn.java 137]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$require invokeStatic core.clj 5996]
+  [clojure.core$require doInvoke core.clj 5996]
+  [clojure.lang.RestFn invoke RestFn.java 512]
+  [user$eval140$loading__6737__auto____141 invoke user.clj 1]
+  [user$eval140 invokeStatic user.clj 1]
+  [user$eval140 invoke user.clj 1]
+  [clojure.lang.Compiler eval Compiler.java 7181]
+  [clojure.lang.Compiler eval Compiler.java 7170]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 368]
+  [clojure.lang.RT maybeLoadResourceScript RT.java 364]
+  [clojure.lang.RT doInit RT.java 486]
+  [clojure.lang.RT init RT.java 467]
+  [clojure.main main main.java 38]]}, :where Uncaught exception onmain} 
+2021-09-06 21:04:56,808 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 21:04:57,027 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 21:04:57,032 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 21:04:57,044 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 21:04:57,124 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 21:04:57,137 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 21:04:57,167 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 21:04:57,168 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 21:04:57,177 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 21:04:57,177 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 21:04:57,177 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 21:04:57,177 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 21:04:57,177 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 21:05:08,697 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 21:05:08,698 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 21:05:08,702 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 21:05:08,702 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 21:05:08,702 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 21:05:08,703 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 21:05:08,703 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 21:06:35,220 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 21:06:35,473 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 21:06:35,478 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 21:06:35,491 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 21:06:35,578 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 21:06:35,591 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 21:06:35,621 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 21:06:35,621 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 21:06:35,631 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 21:06:35,631 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 21:06:35,631 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 21:06:35,631 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 21:06:35,631 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 21:06:52,585 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 21:06:52,585 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 21:06:52,589 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 21:06:52,589 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 21:06:52,589 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 21:06:52,589 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 21:06:52,589 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 21:11:22,025 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 21:11:22,244 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 21:11:22,248 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 21:11:22,256 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 21:11:22,346 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 21:11:22,358 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 21:11:22,388 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 21:11:22,389 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 21:11:47,089 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 21:11:47,089 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 21:11:47,091 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 21:11:47,091 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 21:11:47,091 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 21:11:47,092 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 21:11:47,092 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 21:13:23,647 [main] ERROR clj-app.core - {:what :uncaught-exception, :exception #error {
+ :cause can't start a stateful thing without a start function. (i.e. missing :start fn)
+ :via
+ [{:type clojure.lang.Compiler$CompilerException
+   :message Unexpected error macroexpanding mount/defstate at (clj_app/core.clj:24:1).
+   :data {:clojure.error/phase :macroexpansion, :clojure.error/line 24, :clojure.error/column 1, :clojure.error/source clj_app/core.clj, :clojure.error/symbol mount/defstate}
+   :at [clojure.lang.Compiler macroexpand1 Compiler.java 7023]}
+  {:type java.lang.RuntimeException
+   :message can't start a stateful thing without a start function. (i.e. missing :start fn)
+   :at [mount.core$validate invokeStatic core.cljc 33]}]
+ :trace
+ [[mount.core$validate invokeStatic core.cljc 33]
+  [mount.core$validate invoke core.cljc 31]
+  [mount.core$defstate invokeStatic core.cljc 176]
+  [mount.core$defstate doInvoke core.cljc 166]
+  [clojure.lang.RestFn applyTo RestFn.java 146]
+  [clojure.lang.Var applyTo Var.java 705]
+  [clojure.lang.Compiler macroexpand1 Compiler.java 6997]
+  [clojure.lang.Compiler macroexpand Compiler.java 7079]
+  [clojure.lang.Compiler eval Compiler.java 7165]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 372]
+  [clojure.lang.RT load RT.java 459]
+  [clojure.lang.RT load RT.java 424]
+  [clojure.core$load$fn__6856 invoke core.clj 6115]
+  [clojure.core$load invokeStatic core.clj 6114]
+  [clojure.core$load doInvoke core.clj 6098]
+  [clojure.lang.RestFn invoke RestFn.java 408]
+  [clojure.core$load_one invokeStatic core.clj 5897]
+  [clojure.core$load_one invoke core.clj 5892]
+  [clojure.core$load_lib$fn__6796 invoke core.clj 5937]
+  [clojure.core$load_lib invokeStatic core.clj 5936]
+  [clojure.core$load_lib doInvoke core.clj 5917]
+  [clojure.lang.RestFn applyTo RestFn.java 142]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$load_libs invokeStatic core.clj 5974]
+  [clojure.core$load_libs doInvoke core.clj 5958]
+  [clojure.lang.RestFn applyTo RestFn.java 137]
+  [clojure.core$apply invokeStatic core.clj 669]
+  [clojure.core$require invokeStatic core.clj 5996]
+  [clojure.core$require doInvoke core.clj 5996]
+  [clojure.lang.RestFn invoke RestFn.java 512]
+  [user$eval140$loading__6737__auto____141 invoke user.clj 1]
+  [user$eval140 invokeStatic user.clj 1]
+  [user$eval140 invoke user.clj 1]
+  [clojure.lang.Compiler eval Compiler.java 7181]
+  [clojure.lang.Compiler eval Compiler.java 7170]
+  [clojure.lang.Compiler load Compiler.java 7640]
+  [clojure.lang.RT loadResourceScript RT.java 381]
+  [clojure.lang.RT loadResourceScript RT.java 368]
+  [clojure.lang.RT maybeLoadResourceScript RT.java 364]
+  [clojure.lang.RT doInit RT.java 486]
+  [clojure.lang.RT init RT.java 467]
+  [clojure.main main main.java 38]]}, :where Uncaught exception onmain} 
+2021-09-06 21:18:50,834 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 21:18:51,075 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 21:18:51,083 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 21:18:51,089 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 21:18:51,169 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 21:18:51,180 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 21:18:51,209 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 21:18:51,210 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 21:18:51,221 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 21:18:51,221 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 21:18:51,221 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 21:18:51,221 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 21:18:51,221 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 21:18:54,190 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 21:18:54,190 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 21:18:54,194 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 21:18:54,195 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 21:18:54,195 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 21:18:54,195 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 21:18:54,196 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 
+2021-09-06 21:34:52,481 [main] INFO  clj-app.env - 
+-=[clj-app started successfully using the development profile]=- 
+2021-09-06 21:34:52,733 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider 
+2021-09-06 21:34:52,737 [main] INFO  io.undertow - starting server: Undertow - 2.2.7.Final 
+2021-09-06 21:34:52,745 [main] INFO  org.xnio - XNIO version 3.8.0.Final 
+2021-09-06 21:34:52,827 [main] INFO  org.jboss.threads - JBoss Threads version 3.1.0.Final 
+2021-09-06 21:34:52,838 [main] DEBUG io.undertow - Configuring listener with protocol HTTP for interface 0.0.0.0 and port 3000 
+2021-09-06 21:34:52,869 [main] INFO  luminus.http-server - server started on port 3000 
+2021-09-06 21:34:52,869 [main] INFO  clj-app.nrepl - starting nREPL server on port 7000 
+2021-09-06 21:34:52,880 [main] INFO  clj-app.core - #'clj-app.config/env started 
+2021-09-06 21:34:52,880 [main] INFO  clj-app.core - #'clj-app.handler/init-app started 
+2021-09-06 21:34:52,880 [main] INFO  clj-app.core - #'clj-app.handler/app-routes started 
+2021-09-06 21:34:52,880 [main] INFO  clj-app.core - #'clj-app.core/http-server started 
+2021-09-06 21:34:52,880 [main] INFO  clj-app.core - #'clj-app.core/repl-server started 
+2021-09-06 21:35:15,687 [Thread-2] INFO  clj-app.nrepl - nREPL server stopped 
+2021-09-06 21:35:15,687 [Thread-2] INFO  io.undertow - stopping server: Undertow - 2.2.7.Final 
+2021-09-06 21:35:15,692 [Thread-2] INFO  luminus.http-server - HTTP server stopped 
+2021-09-06 21:35:15,692 [Thread-2] INFO  clj-app.env - 
+-=[clj-app has shut down successfully]=- 
+2021-09-06 21:35:15,693 [Thread-2] INFO  clj-app.core - #'clj-app.core/repl-server stopped 
+2021-09-06 21:35:15,693 [Thread-2] INFO  clj-app.core - #'clj-app.core/http-server stopped 
+2021-09-06 21:35:15,693 [Thread-2] INFO  clj-app.core - #'clj-app.handler/init-app stopped 

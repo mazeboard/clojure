@@ -1,14 +1,12 @@
 goog.provide('cljs.core.async.impl.buffers');
-goog.require('cljs.core');
-goog.require('cljs.core.async.impl.protocols');
 cljs.core.async.impl.buffers.acopy = (function cljs$core$async$impl$buffers$acopy(src,src_start,dest,dest_start,len){
 var cnt = (0);
 while(true){
 if((cnt < len)){
 (dest[(dest_start + cnt)] = (src[(src_start + cnt)]));
 
-var G__49578 = (cnt + (1));
-cnt = G__49578;
+var G__47205 = (cnt + (1));
+cnt = G__47205;
 continue;
 } else {
 return null;
@@ -111,14 +109,14 @@ var n__4607__auto__ = self__.length;
 var x = (0);
 while(true){
 if((x < n__4607__auto__)){
-var v_49582 = this$.pop();
-if((keep_QMARK_.cljs$core$IFn$_invoke$arity$1 ? keep_QMARK_.cljs$core$IFn$_invoke$arity$1(v_49582) : keep_QMARK_.call(null,v_49582))){
-this$.unshift(v_49582);
+var v_47211 = this$.pop();
+if((keep_QMARK_.cljs$core$IFn$_invoke$arity$1 ? keep_QMARK_.cljs$core$IFn$_invoke$arity$1(v_47211) : keep_QMARK_.call(null,v_47211))){
+this$.unshift(v_47211);
 } else {
 }
 
-var G__49583 = (x + (1));
-x = G__49583;
+var G__47212 = (x + (1));
+x = G__47212;
 continue;
 } else {
 return null;
@@ -171,7 +169,7 @@ cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocol
 cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$full_QMARK_$arity$1 = (function (this$){
 var self__ = this;
 var this$__$1 = this;
-return (self__.buf.length === self__.n);
+return (self__.buf.length >= self__.n);
 });
 
 cljs.core.async.impl.buffers.FixedBuffer.prototype.cljs$core$async$impl$protocols$Buffer$remove_BANG_$arity$1 = (function (this$){

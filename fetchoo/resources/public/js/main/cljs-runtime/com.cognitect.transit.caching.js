@@ -2,11 +2,11 @@ goog.provide("com.cognitect.transit.caching");
 goog.require("com.cognitect.transit.delimiters");
 goog.scope(function() {
   var caching = com.cognitect.transit.caching, d = com.cognitect.transit.delimiters;
-  /** @const @type {number} */ caching.MIN_SIZE_CACHEABLE = 3;
-  /** @const @type {number} */ caching.BASE_CHAR_IDX = 48;
-  /** @const @type {number} */ caching.CACHE_CODE_DIGITS = 44;
-  /** @const @type {number} */ caching.MAX_CACHE_ENTRIES = caching.CACHE_CODE_DIGITS * caching.CACHE_CODE_DIGITS;
-  /** @const @type {number} */ caching.MAX_CACHE_SIZE = 4096;
+  caching.MIN_SIZE_CACHEABLE = 3;
+  caching.BASE_CHAR_IDX = 48;
+  caching.CACHE_CODE_DIGITS = 44;
+  caching.MAX_CACHE_ENTRIES = caching.CACHE_CODE_DIGITS * caching.CACHE_CODE_DIGITS;
+  caching.MAX_CACHE_SIZE = 4096;
   caching.isCacheable = function(string, asMapKey) {
     if (string.length > caching.MIN_SIZE_CACHEABLE) {
       if (asMapKey) {
@@ -31,7 +31,7 @@ goog.scope(function() {
       return d.SUB + String.fromCharCode(hi + caching.BASE_CHAR_IDX) + loc;
     }
   };
-  /** @constructor */ caching.WriteCache = function() {
+  caching.WriteCache = function() {
     this.idx = 0;
     this.gen = 0;
     this.cacheSize = 0;
@@ -85,7 +85,7 @@ goog.scope(function() {
       return hi + lo;
     }
   };
-  /** @constructor */ caching.ReadCache = function Transit$ReadCache() {
+  caching.ReadCache = function Transit$ReadCache() {
     this.idx = 0;
     this.cache = [];
   };

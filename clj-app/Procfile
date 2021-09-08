@@ -1,0 +1,1 @@
+web: java -Dclojure.main.report=stderr -cp target/uberjar/clj-app.jar clojure.main -m clj-app.core

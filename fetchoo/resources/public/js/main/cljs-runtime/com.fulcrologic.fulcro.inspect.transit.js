@@ -1,8 +1,4 @@
 goog.provide('com.fulcrologic.fulcro.inspect.transit');
-goog.require('cljs.core');
-goog.require('cognitect.transit');
-goog.require('com.cognitect.transit.types');
-goog.require('com.fulcrologic.fulcro.algorithms.transit');
 
 /**
 * @constructor
@@ -61,8 +57,19 @@ return "unknown";
 com.fulcrologic.fulcro.inspect.transit.DefaultHandler.prototype.rep = (function (v){
 var self__ = this;
 var this$ = this;
-return cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([v], 0));
-});
+try{return cljs.core.str.cljs$core$IFn$_invoke$arity$1(v);
+}catch (e55124){var e = e55124;
+if(cljs.core.truth_(goog.DEBUG)){
+taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"warn","warn",-436710552),"com.fulcrologic.fulcro.inspect.transit",null,20,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay(((function (e,this$){
+return (function (){
+return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Transit was unable to encode a value. See https://book.fulcrologic.com/#warn-transit-encode-failed"], null);
+});})(e,this$))
+,null)),null,-1332571850,null);
+} else {
+}
+
+return "UNENCODED VALUE";
+}});
 
 com.fulcrologic.fulcro.inspect.transit.DefaultHandler.getBasis = (function (){
 return cljs.core.PersistentVector.EMPTY;
@@ -83,19 +90,23 @@ com.fulcrologic.fulcro.inspect.transit.__GT_DefaultHandler = (function com$fulcr
 return (new com.fulcrologic.fulcro.inspect.transit.DefaultHandler());
 });
 
-com.fulcrologic.fulcro.inspect.transit.write_handlers = cljs.core.PersistentArrayMap.createAsIfByAssoc([cljs.core.ExceptionInfo,(new com.fulcrologic.fulcro.inspect.transit.ErrorHandler()),"default",(new com.fulcrologic.fulcro.inspect.transit.DefaultHandler())]);
-com.fulcrologic.fulcro.inspect.transit.read_handlers = new cljs.core.PersistentArrayMap(null, 1, ["js-error",(function (p__53390){
-var vec__53391 = p__53390;
-var msg = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__53391,(0),null);
-var data = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__53391,(1),null);
+com.fulcrologic.fulcro.inspect.transit.write_handlers = (function com$fulcrologic$fulcro$inspect$transit$write_handlers(){
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.PersistentArrayMap.createAsIfByAssoc([cljs.core.ExceptionInfo,(new com.fulcrologic.fulcro.inspect.transit.ErrorHandler()),"default",(new com.fulcrologic.fulcro.inspect.transit.DefaultHandler())]),com.fulcrologic.fulcro.algorithms.transit.write_handlers()], 0));
+});
+com.fulcrologic.fulcro.inspect.transit.read_handlers = (function com$fulcrologic$fulcro$inspect$transit$read_handlers(){
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 1, ["js-error",(function (p__55132){
+var vec__55134 = p__55132;
+var msg = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__55134,(0),null);
+var data = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__55134,(1),null);
 return cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2(msg,data);
-})], null);
+})], null),com.fulcrologic.fulcro.algorithms.transit.read_handlers()], 0));
+});
 com.fulcrologic.fulcro.inspect.transit.read = (function com$fulcrologic$fulcro$inspect$transit$read(str){
-var reader = com.fulcrologic.fulcro.algorithms.transit.reader.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"handlers","handlers",79528781),com.fulcrologic.fulcro.inspect.transit.read_handlers], null));
+var reader = com.fulcrologic.fulcro.algorithms.transit.reader.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"handlers","handlers",79528781),com.fulcrologic.fulcro.inspect.transit.read_handlers()], null));
 return cognitect.transit.read(reader,str);
 });
 com.fulcrologic.fulcro.inspect.transit.write = (function com$fulcrologic$fulcro$inspect$transit$write(x){
-var writer = com.fulcrologic.fulcro.algorithms.transit.writer.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"handlers","handlers",79528781),com.fulcrologic.fulcro.inspect.transit.write_handlers], null));
+var writer = com.fulcrologic.fulcro.algorithms.transit.writer.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"handlers","handlers",79528781),com.fulcrologic.fulcro.inspect.transit.write_handlers()], null));
 return cognitect.transit.write(writer,x);
 });
 com.cognitect.transit.types.UUID.prototype.cljs$core$IUUID$ = cljs.core.PROTOCOL_SENTINEL;

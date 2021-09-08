@@ -1,0 +1,13 @@
+{:deps
+ {org.clojure/clojurescript {:mvn/version "1.10.866"}}
+ :aliases {
+           :dev {:main-opts ["--main" "cljs.main"
+                             "--watch" "src"
+                             "--compile" "app.client"
+                             "--repl"]}
+           :socket {:jms-opts ["-Dclojure.server.browser={:port,4444,:accept,cljs.server.browser/repl}"]
+                    :main-opts ["--main" "cljs.main"
+                                "--watch" "src"
+                                "--compile" "app.client"]}
+ }
+}

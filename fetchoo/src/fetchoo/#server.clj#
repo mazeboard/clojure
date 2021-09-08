@@ -1,12 +1,16 @@
 (ns fetchoo.core
-  (:import [org.apache.spark.sql SparkSession]
-           [org.apache.spark SparkConf]
-           [com.typesafe.config Config ConfigValue ConfigFactory]
-           [org.eclipse.jetty.server Server]
-           [io.javalin Javalin]
-           [io.javalin.websocket WsConnectContext]
-           [org.eclipse.jetty.util.thread QueuedThreadPool])
-  (:require [cheshire.core :refer :all]))
+  (:require [org.apache.spark.sql SparkSession]
+            [org.apache.spark SparkConf]
+            [com.typesafe.config Config ConfigValue]
+            [ring.adapter.jetty :as jetty]
+            [ring-jetty.util.ws :as ws]
+            [muuntaja.core :as m]
+            [reitit.ring :as ring]
+            [reitit.coercion.spec]
+            [reitit.ring.coercion :as rrc]
+            [reitit.ring.middleware.muuntaja :as muuntaja]
+            [reitit.ring.middleware.parameters :as parameters]
+            [cheshire.core :refer :all]))
 
 (defn createTempViews [spark elasticsearchConfig]
   )
@@ -65,33 +69,34 @@
                                                     })))))))
            ))))
 
-(defn startServer []
-  (let [config (ConfigFactory/load)
-        javalinConf (.getConfig config "javalin")
+(defn startServer [config]
+  (let [httpConf (.getConfig config "http")
         sparkConf (let [sparkConf (SparkConf.)]
                     (doseq [[key value] (.entrySet (.getConfig config "sparkConf"))]
                       (.set sparkConf
                             ^String key
                             (.toString (.unwrapped value))))
                     sparkConf)
-        app (.start (Javalin/create (fn [c]
-                                      (.addStaticFiles c "/public");
-                                      (.server c (fn [] (Server. (QueuedThreadPool.
-                                                                  (.getInt javalinConf "maxThreadPool")
-                                                                  (.getInt javalinConf "minThreadPool")
-                                                                  (.getInt javalinConf "maxThreadPool")))))))
-                    (.getInt javalinConf "port"))
+        app (ring/ring-handler
+             (ring/router
+              ["/api"
+               ["/math" {:get {:parameters {:query {:x int?, :y int?}}
+                               :responses  {200 {:body {:total int?}}}
+                               :handler    (fn [{{{:keys [x y]} :query} :parameters}]
+                                             {:status 200
+                                              :body   {:total (+ x y)}})}}]]
+              ;; router data affecting all routes
+              {:data {:coercion   reitit.coercion.spec/coercion
+                      :muuntaja   m/instance
+                      :middleware [parameters/parameters-middleware
+                                   rrc/coerce-request-middleware
+                                   rrc/coerce-response-middleware
+                                   muuntaja/format-response-middleware]}}))
         spark (.getOrCreate (.config (SparkSession/builder) sparkConf))]
-    (.events app (fn [event]
-                   (.serverStarted event (fn [] (println "start server")))
-                   (.serverStopped event (fn [] (println "stopped server")))))
-    (.exception app
-                (.class Exception)
-                (fn [e ctx] 
-                  (.printStackTrace e)
-                  (.result (.status ctx 404) (.getMessage e))))
     (createTempViews spark (.getConfig config "elasticsearch"))
-    (fetchWS app spark)))
+    (fetchWS app spark)
+    (jetty/run-jetty app {:port (.getInt httpConf)})
+    ))
 
           
         

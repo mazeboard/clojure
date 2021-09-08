@@ -1,66 +1,28 @@
 goog.provide("goog.string.internal");
-/**
- * @param {string} str
- * @param {string} prefix
- * @return {boolean}
- */
 goog.string.internal.startsWith = function(str, prefix) {
   return str.lastIndexOf(prefix, 0) == 0;
 };
-/**
- * @param {string} str
- * @param {string} suffix
- * @return {boolean}
- */
 goog.string.internal.endsWith = function(str, suffix) {
   var l = str.length - suffix.length;
   return l >= 0 && str.indexOf(suffix, l) == l;
 };
-/**
- * @param {string} str
- * @param {string} prefix
- * @return {boolean}
- */
 goog.string.internal.caseInsensitiveStartsWith = function(str, prefix) {
   return goog.string.internal.caseInsensitiveCompare(prefix, str.substr(0, prefix.length)) == 0;
 };
-/**
- * @param {string} str
- * @param {string} suffix
- * @return {boolean}
- */
 goog.string.internal.caseInsensitiveEndsWith = function(str, suffix) {
   return goog.string.internal.caseInsensitiveCompare(suffix, str.substr(str.length - suffix.length, suffix.length)) == 0;
 };
-/**
- * @param {string} str1
- * @param {string} str2
- * @return {boolean}
- */
 goog.string.internal.caseInsensitiveEquals = function(str1, str2) {
   return str1.toLowerCase() == str2.toLowerCase();
 };
-/**
- * @param {string} str
- * @return {boolean}
- */
 goog.string.internal.isEmptyOrWhitespace = function(str) {
   return /^[\s\xa0]*$/.test(str);
 };
-/**
- * @param {string} str
- * @return {string}
- */
 goog.string.internal.trim = goog.TRUSTED_SITE && String.prototype.trim ? function(str) {
   return str.trim();
 } : function(str) {
   return /^[\s\xa0]*([\s\S]*?)[\s\xa0]*$/.exec(str)[1];
 };
-/**
- * @param {string} str1
- * @param {string} str2
- * @return {number}
- */
 goog.string.internal.caseInsensitiveCompare = function(str1, str2) {
   var test1 = String(str1).toLowerCase();
   var test2 = String(str2).toLowerCase();
@@ -74,19 +36,9 @@ goog.string.internal.caseInsensitiveCompare = function(str1, str2) {
     }
   }
 };
-/**
- * @param {string} str
- * @param {boolean=} opt_xml
- * @return {string}
- */
 goog.string.internal.newLineToBr = function(str, opt_xml) {
   return str.replace(/(\r\n|\r|\n)/g, opt_xml ? "\x3cbr /\x3e" : "\x3cbr\x3e");
 };
-/**
- * @param {string} str
- * @param {boolean=} opt_isLikelyToContainHtmlChars
- * @return {string}
- */
 goog.string.internal.htmlEscape = function(str, opt_isLikelyToContainHtmlChars) {
   if (opt_isLikelyToContainHtmlChars) {
     str = str.replace(goog.string.internal.AMP_RE_, "\x26amp;").replace(goog.string.internal.LT_RE_, "\x26lt;").replace(goog.string.internal.GT_RE_, "\x26gt;").replace(goog.string.internal.QUOT_RE_, "\x26quot;").replace(goog.string.internal.SINGLE_QUOTE_RE_, "\x26#39;").replace(goog.string.internal.NULL_RE_, "\x26#0;");
@@ -116,42 +68,22 @@ goog.string.internal.htmlEscape = function(str, opt_isLikelyToContainHtmlChars) 
     return str;
   }
 };
-/** @private @const @type {!RegExp} */ goog.string.internal.AMP_RE_ = /&/g;
-/** @private @const @type {!RegExp} */ goog.string.internal.LT_RE_ = /</g;
-/** @private @const @type {!RegExp} */ goog.string.internal.GT_RE_ = />/g;
-/** @private @const @type {!RegExp} */ goog.string.internal.QUOT_RE_ = /"/g;
-/** @private @const @type {!RegExp} */ goog.string.internal.SINGLE_QUOTE_RE_ = /'/g;
-/** @private @const @type {!RegExp} */ goog.string.internal.NULL_RE_ = /\x00/g;
-/** @private @const @type {!RegExp} */ goog.string.internal.ALL_RE_ = /[\x00&<>"']/;
-/**
- * @param {string} str
- * @param {boolean=} opt_xml
- * @return {string}
- */
+goog.string.internal.AMP_RE_ = /&/g;
+goog.string.internal.LT_RE_ = /</g;
+goog.string.internal.GT_RE_ = />/g;
+goog.string.internal.QUOT_RE_ = /"/g;
+goog.string.internal.SINGLE_QUOTE_RE_ = /'/g;
+goog.string.internal.NULL_RE_ = /\x00/g;
+goog.string.internal.ALL_RE_ = /[\x00&<>"']/;
 goog.string.internal.whitespaceEscape = function(str, opt_xml) {
   return goog.string.internal.newLineToBr(str.replace(/  /g, " \x26#160;"), opt_xml);
 };
-/**
- * @param {string} str
- * @param {string} subString
- * @return {boolean}
- */
 goog.string.internal.contains = function(str, subString) {
   return str.indexOf(subString) != -1;
 };
-/**
- * @param {string} str
- * @param {string} subString
- * @return {boolean}
- */
 goog.string.internal.caseInsensitiveContains = function(str, subString) {
   return goog.string.internal.contains(str.toLowerCase(), subString.toLowerCase());
 };
-/**
- * @param {(string|number)} version1
- * @param {(string|number)} version2
- * @return {number}
- */
 goog.string.internal.compareVersions = function(version1, version2) {
   var order = 0;
   var v1Subs = goog.string.internal.trim(String(version1)).split(".");
@@ -175,12 +107,6 @@ goog.string.internal.compareVersions = function(version1, version2) {
   }
   return order;
 };
-/**
- * @private
- * @param {(string|number|boolean)} left
- * @param {(string|number|boolean)} right
- * @return {number}
- */
 goog.string.internal.compareElements_ = function(left, right) {
   if (left < right) {
     return -1;

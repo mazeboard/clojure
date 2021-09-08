@@ -1,6 +1,4 @@
 goog.provide('taoensso.truss');
-goog.require('cljs.core');
-goog.require('taoensso.truss.impl');
 /**
  * Returns current value of dynamic assertion data.
  */
