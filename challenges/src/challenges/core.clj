@@ -158,20 +158,7 @@
                   [x y])))))
 
 ;; [clojure test task: data grouping](https://gist.github.com/volodymyrpavliuk/c78679895da8aad1cd4bffc8660b63ce)
-(defmacro factor-group [data group-data bindings & body]
-  (let [k (gensym)]
-    (if (empty? bindings)
-      `(list (let [~group-data ~data] ~@body))
-      `(flatten
-        (map (fn [[~k data#]]
-               (factor-group data#
-                             ~group-data
-                             ~(rest (rest bindings))
-                             (let [~(first bindings) ~k] ~@body)))
-             (group-by ~(second bindings) ~data))))))
-
-;; improvement
-#_(defmacro factor-group [data group-data [binding-sym binding-key & rest-bindings :as bindings] & body]
+(defmacro factor-group [data group-data [binding-sym binding-key & rest-bindings :as bindings] & body]
   (let [k (gensym)]
     (if (empty? bindings)
       `(list (let [~group-data ~data] ~@body))
